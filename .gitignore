@@ -1,16 +1,10 @@
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
+# build output
+/dist
+/.next
+/out
 /build
 
 # misc
@@ -28,4 +22,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-

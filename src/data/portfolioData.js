@@ -33,7 +33,7 @@ export const portfolioData = {
     linkedinUrl: "", // Placeholder until provided
     linkedinPlaceholder: "[PLACEHOLDER: LinkedIn Profile]",
     resumeUrl: "/placeholder-resume.pdf",
-    profilePhotoUrl: "/profile-photo.jpg", // Drop photo at public/profile-photo.jpg
+    profilePhotoUrl: "/profile-avatar.svg", // Replace with "/profile-photo.jpg" once placed in public/
     profilePhotoAvailable: true,
   },
 

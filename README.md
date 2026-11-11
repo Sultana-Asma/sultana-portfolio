@@ -19,11 +19,10 @@ A modern, minimal, dark-by-default personal portfolio website built for **Sultan
 
 ## 2. Technology Stack
 
-- **Framework**: Next.js 15 (App Router) & React 19
-- **Styling**: CSS3 Custom Properties (Design Tokens) + Tailwind CSS
-- **Typography**: `Plus Jakarta Sans` (Display), `Inter` (Body), `JetBrains Mono` (Code & Tags)
-- **Icons**: `lucide-react`
-- **Backend API**: Next.js Serverless Route Handler (`POST /api/contact`) with validation & honeypot anti-spam protection
+- **HTML5**: Semantic document entry (`index.html`) with SEO & JSON-LD structured metadata
+- **CSS3**: Pure CSS stylesheet (`src/index.css`) with Dark/Light custom properties, responsive Grid/Flexbox layouts, and fluid typography
+- **JavaScript (ES6+)**: Modular data configuration (`src/data/portfolioData.js`), filtering, and client-side form validation
+- **React**: Component-driven UI architecture (`src/App.jsx` & `src/components/`) bundled with Vite
 
 ---
 
@@ -49,10 +48,4 @@ All text, links, project cards, and section toggles are centralized in a single 
 
 ### Adding Your Profile Photo
 1. Place your photo file at `public/profile-photo.jpg`.
-2. The Hero section will automatically detect and display `/profile-photo.jpg` (and falls back to `/profile-avatar.svg` if not yet placed).
-
-### Replacing Your Resume PDF
-1. Replace `public/placeholder-resume.pdf` with your final PDF resume (or update `owner.resumeUrl` in `src/data/portfolioData.js`).
-
-### Enabling Experience or Certifications Sections
-- In `src/data/portfolioData.js`, set `experience.enabled = true` or `certifications.enabled = true` once you have entries to display.
+2. Update `profilePhotoUrl: "/profile-photo.jpg"` in `src/data/portfolioData.js`.

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ArrowUpRight, Check, Layout, Code2, Sparkles } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";

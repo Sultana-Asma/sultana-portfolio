@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "next/link";
 import { ArrowLeft, Compass } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 
-export default function NotFound() {
+export default function NotFoundSection() {
   return (
     <section className="swiss-grid-bg flex min-h-[75vh] items-center justify-center px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-xl rounded-2xl border border-hairline bg-elevated p-8 text-center shadow-sm sm:p-12">
@@ -28,19 +27,19 @@ export default function NotFound() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link
+          <a
             href="/"
             className="inline-flex items-center gap-2 rounded-lg bg-accent-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             <span>Return to Portfolio Home</span>
-          </Link>
-          <Link
+          </a>
+          <a
             href="/#projects"
             className="inline-flex items-center gap-2 rounded-lg border border-hairlineStrong bg-surface px-5 py-3 text-sm font-semibold text-ink-primary transition-colors hover:border-accent-primary hover:text-accent-primary"
           >
             <span>Explore Projects</span>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

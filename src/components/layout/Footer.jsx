@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ArrowUp, Github, Mail, MapPin, GraduationCap } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
