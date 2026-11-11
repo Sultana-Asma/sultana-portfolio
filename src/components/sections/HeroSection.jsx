@@ -3,8 +3,6 @@ import {
   ArrowRight,
   FileDown,
   Github,
-  MapPin,
-  GraduationCap,
   Code2,
   CheckCircle2,
   User,
@@ -264,41 +262,6 @@ export default function HeroSection() {
                   </div>
                 </div>
               )}
-
-              {/* Verified Quick Metadata Strip */}
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                <div className="rounded-xl border border-hairline bg-surface p-3.5">
-                  <div className="flex items-center gap-1.5 font-mono text-[11px] text-ink-muted">
-                    <GraduationCap
-                      className="h-3.5 w-3.5 text-accent-primary"
-                      aria-hidden="true"
-                    />
-                    <span>University</span>
-                  </div>
-                  <p className="mt-1 truncate text-xs font-semibold text-ink-primary">
-                    {owner.university}
-                  </p>
-                  <p className="font-mono text-[11px] text-ink-secondary">
-                    {owner.semester} · {owner.graduationYear}
-                  </p>
-                </div>
-
-                <div className="rounded-xl border border-hairline bg-surface p-3.5">
-                  <div className="flex items-center gap-1.5 font-mono text-[11px] text-ink-muted">
-                    <MapPin
-                      className="h-3.5 w-3.5 text-accent-secondary"
-                      aria-hidden="true"
-                    />
-                    <span>Location & Focus</span>
-                  </div>
-                  <p className="mt-1 text-xs font-semibold text-ink-primary">
-                    {owner.location}
-                  </p>
-                  <p className="font-mono text-[11px] text-ink-secondary">
-                    Front-End & UI/UX
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
