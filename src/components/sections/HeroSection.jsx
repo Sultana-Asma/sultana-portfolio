@@ -15,9 +15,7 @@ import Button from "@/components/ui/Button";
 export default function HeroSection() {
   const { owner, hero } = portfolioData;
   const [activeView, setActiveView] = useState("portrait"); // "portrait" | "code"
-  const [photoSrc, setPhotoSrc] = useState(
-    owner.profilePhotoUrl || "/profile-avatar.svg"
-  );
+  const photoSrc = owner.profilePhotoUrl || "/profile-picture.jpeg";
 
   return (
     <section
@@ -169,18 +167,137 @@ export default function HeroSection() {
               </div>
 
               {activeView === "portrait" ? (
-                /* View 1: Profile Photo Container (Automatically loads /profile-photo.jpg or falls back cleanly to /profile-avatar.svg) */
+                /* View 1: Profile Photo Framed inside the Dark Portrait Card */
                 <div className="relative aspect-[4/4] w-full overflow-hidden rounded-xl border border-hairline bg-surface">
-                  <img
-                    src={photoSrc}
-                    alt={`${owner.fullName} — ${owner.title}`}
-                    onError={() => {
-                      if (photoSrc !== "/profile-avatar.svg") {
-                        setPhotoSrc("/profile-avatar.svg");
-                      }
-                    }}
-                    className="h-full w-full object-cover object-center"
-                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 600 600"
+                    className="h-full w-full"
+                    role="img"
+                    aria-label={`${owner.fullName} — ${owner.title}`}
+                  >
+                    <defs>
+                      <linearGradient
+                        id="heroBgGrad"
+                        x1="0"
+                        y1="0"
+                        x2="600"
+                        y2="600"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0%" stopColor="#0F121B" />
+                        <stop offset="50%" stopColor="#141824" />
+                        <stop offset="100%" stopColor="#090A0F" />
+                      </linearGradient>
+                      <linearGradient
+                        id="heroAccentGrad"
+                        x1="120"
+                        y1="100"
+                        x2="480"
+                        y2="500"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0%" stopColor="#3B82F6" />
+                        <stop offset="100%" stopColor="#6366F1" />
+                      </linearGradient>
+                      <radialGradient id="heroGlow" cx="50%" cy="38%" r="45%">
+                        <stop
+                          offset="0%"
+                          stopColor="#3B82F6"
+                          stopOpacity="0.22"
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#6366F1"
+                          stopOpacity="0"
+                        />
+                      </radialGradient>
+                      <clipPath id="portraitCircleClip">
+                        <circle cx="300" cy="230" r="126" />
+                      </clipPath>
+                    </defs>
+
+                    {/* Background & Glow */}
+                    <rect width="600" height="600" fill="url(#heroBgGrad)" />
+                    <circle cx="300" cy="230" r="240" fill="url(#heroGlow)" />
+
+                    {/* Subtle Architectural Grid Lines */}
+                    <g stroke="#1E2436" strokeWidth="1" opacity="0.65">
+                      <line x1="0" y1="120" x2="600" y2="120" />
+                      <line x1="0" y1="240" x2="600" y2="240" />
+                      <line x1="0" y1="360" x2="600" y2="360" />
+                      <line x1="0" y1="480" x2="600" y2="480" />
+                      <line x1="120" y1="0" x2="120" y2="600" />
+                      <line x1="240" y1="0" x2="240" y2="600" />
+                      <line x1="360" y1="0" x2="360" y2="600" />
+                      <line x1="480" y1="0" x2="480" y2="600" />
+                    </g>
+
+                    {/* Outer Dashed Ring & Inner Frame */}
+                    <circle
+                      cx="300"
+                      cy="230"
+                      r="142"
+                      stroke="url(#heroAccentGrad)"
+                      strokeWidth="2"
+                      strokeDasharray="6 6"
+                      opacity="0.65"
+                      fill="none"
+                    />
+                    <circle
+                      cx="300"
+                      cy="230"
+                      r="128"
+                      fill="#141824"
+                      stroke="url(#heroAccentGrad)"
+                      strokeWidth="3"
+                    />
+
+                    {/* Owner Profile Picture Clipped to Circle */}
+                    <image
+                      href={photoSrc}
+                      x="174"
+                      y="104"
+                      width="252"
+                      height="252"
+                      preserveAspectRatio="xMidYMid slice"
+                      clipPath="url(#portraitCircleClip)"
+                    />
+
+                    {/* Name & Role Badge */}
+                    <rect
+                      x="115"
+                      y="410"
+                      width="370"
+                      height="86"
+                      rx="16"
+                      fill="#141824"
+                      stroke="#2E3752"
+                      strokeWidth="1.5"
+                    />
+                    <text
+                      x="300"
+                      y="446"
+                      textAnchor="middle"
+                      fill="#F8FAFC"
+                      fontFamily="Plus Jakarta Sans, system-ui, sans-serif"
+                      fontSize="20"
+                      fontWeight="700"
+                      letterSpacing="0.4"
+                    >
+                      {owner.fullName}
+                    </text>
+                    <text
+                      x="300"
+                      y="474"
+                      textAnchor="middle"
+                      fill="#94A3B8"
+                      fontFamily="JetBrains Mono, monospace"
+                      fontSize="12.5"
+                    >
+                      {owner.title}
+                    </text>
+                  </svg>
                 </div>
               ) : (
                 /* View 2: Interactive Developer Spec Code View */
