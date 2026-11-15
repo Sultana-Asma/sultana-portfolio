@@ -69,6 +69,16 @@ export default function AboutSection() {
       <div className="relative mx-auto max-w-portfolio px-4 sm:px-6 lg:px-8">
         {/* A. Section Heading */}
         <div className="about-header about-reveal about-reveal--delay-1">
+          <div className="mb-3 flex items-center justify-start gap-3 font-mono text-xs uppercase tracking-widest text-ink-muted">
+            <span className="inline-flex items-center rounded border border-hairline bg-surface px-2 py-0.5 font-medium text-accent-primary">
+              {about.sectionIndex}
+            </span>
+            <span className="h-px w-6 bg-hairlineStrong" aria-hidden="true" />
+            <span className="font-semibold tracking-[0.14em] text-ink-secondary">
+              ABOUT ME
+            </span>
+          </div>
+
           <h2 id="about-heading" className="about-main-title font-display">
             Get to <span className="about-name-gradient">Know Me</span>
           </h2>
