@@ -1,89 +1,194 @@
-import React from "react";
-import { GraduationCap, Calendar, Code2, MapPin, Sparkles } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  Target,
+  Rocket,
+  Heart,
+  BookOpen,
+  GraduationCap,
+  Code2,
+  Sparkles,
+} from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
-import SectionHeader from "@/components/ui/SectionHeader";
-import SurfaceCard from "@/components/ui/SurfaceCard";
-import Badge from "@/components/ui/Badge";
 
-const factIcons = [GraduationCap, Calendar, Code2, MapPin];
+const rightCardIcons = {
+  goal: Target,
+  "working-on": Rocket,
+  "what-i-love": Heart,
+};
+
+const bottomCardIcons = {
+  semester: BookOpen,
+  university: GraduationCap,
+  focus: Code2,
+  learning: Sparkles,
+};
 
 export default function AboutSection() {
-  const { about } = portfolioData;
+  const { owner, about } = portfolioData;
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  const photoSrc = owner.profilePhotoUrl || "/profile-picture.jpeg";
 
   return (
     <section
       id="about"
+      ref={sectionRef}
       aria-labelledby="about-heading"
-      className="border-b border-hairline py-16 sm:py-24"
+      className={`about-section border-b border-hairline py-16 sm:py-24 ${
+        isVisible ? "about-is-visible" : ""
+      }`}
     >
-      <div className="mx-auto max-w-portfolio px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          index={about.sectionIndex}
-          eyebrow={about.eyebrow}
-          title={about.heading}
-        />
+      {/* Subtle Ambient Background Accents */}
+      <div className="about-ambient-glow about-ambient-glow--blue" aria-hidden="true" />
+      <div className="about-ambient-glow about-ambient-glow--purple" aria-hidden="true" />
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* Left Column: Biography & Primary Interests (7 Cols) */}
-          <div className="flex flex-col justify-between lg:col-span-7">
-            <div className="space-y-4 text-base leading-relaxed text-ink-secondary">
-              {about.paragraphs.map((paragraph, index) => (
-                <div
-                  key={index}
-                  className="rounded-xl border border-hairline bg-elevated/60 p-6"
-                >
-                  <p>{paragraph}</p>
-                </div>
-              ))}
-            </div>
+      <div className="relative mx-auto max-w-portfolio px-4 sm:px-6 lg:px-8">
+        {/* A. Section Heading */}
+        <div className="about-header about-reveal about-reveal--delay-1">
+          <div className="about-eyebrow-pill">
+            <span className="about-eyebrow-dot" aria-hidden="true" />
+            <span>{about.label}</span>
+          </div>
 
-            {/* Primary Interests Strip */}
-            <div className="mt-6 rounded-xl border border-hairline bg-surface p-6">
-              <div className="mb-3.5 flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-ink-primary">
-                <Sparkles
-                  className="h-4 w-4 text-accent-primary"
-                  aria-hidden="true"
+          <h2 id="about-heading" className="about-main-title font-display">
+            Get to <span className="about-name-gradient">Know Me</span>
+          </h2>
+
+          <p className="about-intro-text">{about.intro}</p>
+        </div>
+
+        {/* B. Main Profile Area (Left Avatar | Middle Bio | Right 3 Info Cards) */}
+        <div className="about-main-grid">
+          {/* Left Side: Circular Profile Frame + Blue Gradient Decor + Floating Badge */}
+          <div className="about-avatar-col about-reveal about-reveal--delay-2">
+            <div className="about-avatar-stage">
+              {/* Decorative Gradient Aura & Concentric Rings */}
+              <div className="about-avatar-aura" aria-hidden="true" />
+              <div className="about-avatar-ring-outer" aria-hidden="true" />
+              <div className="about-avatar-ring-inner" aria-hidden="true" />
+
+              {/* Circular Profile Image Frame */}
+              <div className="about-avatar-frame">
+                <img
+                  src={photoSrc}
+                  alt={`${owner.fullName} — ${owner.title}`}
+                  className="about-avatar-img"
                 />
-                <span>Primary Professional Interests</span>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {about.primaryInterests.map((interest) => (
-                  <Badge key={interest} variant="accent">
-                    {interest}
-                  </Badge>
-                ))}
+
+              {/* Floating Badge: Front-End Enthusiast */}
+              <div className="about-floating-badge">
+                <span className="about-floating-badge-icon" aria-hidden="true">
+                  <Sparkles className="h-3.5 w-3.5" />
+                </span>
+                <span>{about.floatingBadge}</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Verified Academic & Location Bento Cards (5 Cols) */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
-            {about.quickFacts.map((fact, idx) => {
-              const IconComponent = factIcons[idx % factIcons.length];
+          {/* Middle Section: Greeting, Highlighted Name, Title & Description */}
+          <div className="about-bio-col about-reveal about-reveal--delay-3">
+            <span className="about-greeting font-mono">{about.greeting}</span>
+
+            <h3 className="about-owner-name font-display">
+              {about.firstNameAndMiddle}{" "}
+              <span className="about-name-gradient">
+                {about.highlightedLastName}
+              </span>
+            </h3>
+
+            <div className="about-role-badge">
+              <Code2 className="h-4 w-4 text-accent-primary" aria-hidden="true" />
+              <span>{about.professionalTitle}</span>
+            </div>
+
+            <p className="about-description">{about.description}</p>
+
+            {/* Subtle Core Interests Pills */}
+            <div className="about-interest-strip">
+              {about.primaryInterests.map((interest) => (
+                <span key={interest} className="about-interest-tag">
+                  {interest}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Side: Three Information Cards (My Goal, Currently Working On, What I Love) */}
+          <div className="about-cards-col about-reveal about-reveal--delay-4">
+            {about.infoCards.map((card) => {
+              const IconComponent = rightCardIcons[card.id] || Sparkles;
               return (
-                <SurfaceCard
-                  key={fact.label}
-                  interactive
-                  className="flex items-start gap-4 p-5"
+                <article
+                  key={card.id}
+                  className={`about-glass-card about-glass-card--${card.accent}`}
                 >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-accent-primary/30 bg-accent-primary/10 text-accent-primary">
-                    <IconComponent className="h-5 w-5" aria-hidden="true" />
+                  <div
+                    className={`about-card-icon about-card-icon--${card.accent}`}
+                    aria-hidden="true"
+                  >
+                    <IconComponent className="h-5 w-5" />
                   </div>
-                  <div>
-                    <p className="font-mono text-xs uppercase tracking-wider text-ink-muted">
-                      {fact.label}
-                    </p>
-                    <p className="mt-1 font-display text-base font-bold text-ink-primary">
-                      {fact.value}
-                    </p>
-                    <p className="mt-0.5 text-xs text-ink-secondary">
-                      {fact.meta}
-                    </p>
+                  <div className="about-card-body">
+                    <h4 className="about-card-title font-display">
+                      {card.title}
+                    </h4>
+                    <p className="about-card-desc">{card.description}</p>
                   </div>
-                </SurfaceCard>
+                </article>
               );
             })}
           </div>
+        </div>
+
+        {/* 3. Bottom Education & Information Cards (4 Horizontal Cards) */}
+        <div className="about-bottom-grid about-reveal about-reveal--delay-5">
+          {about.bottomCards.map((item) => {
+            const IconComponent = bottomCardIcons[item.id] || GraduationCap;
+            return (
+              <div
+                key={item.id}
+                className={`about-bottom-card about-bottom-card--${item.accent}`}
+              >
+                <div
+                  className={`about-bottom-icon about-bottom-icon--${item.accent}`}
+                  aria-hidden="true"
+                >
+                  <IconComponent className="h-5 w-5" />
+                </div>
+                <div className="about-bottom-content">
+                  <h4 className="about-bottom-title font-display">
+                    {item.title}
+                  </h4>
+                  <p className="about-bottom-subtitle">{item.subtitle}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

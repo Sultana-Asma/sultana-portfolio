@@ -68,32 +68,64 @@ export const portfolioData = {
 
   about: {
     sectionIndex: "01",
-    eyebrow: "ABOUT ME",
-    heading: "Combining a Computer Science Foundation with Modern Front-End Craft.",
-    paragraphs: [
-      "I am Sultana Asma Islam, a final-semester Computer Science and Engineering (CSE) student at Daffodil International University in Dhaka, graduating in 2026. My focus lies in building clean, responsive, and user-centered web interfaces that bridge structured engineering logic with refined visual design.",
-      "[PLACEHOLDER: Additional Personal Bio Notes] — As an aspiring Front-End Developer, I enjoy transforming ideas and UI/UX concepts into accessible, fast, and interactive web applications using semantic HTML, modern CSS architectures, JavaScript, and reusable React components.",
+    label: "About Me",
+    heading: "Get to Know Me",
+    intro:
+      "A glimpse into my academic background, front-end development passion, and the goals driving my journey in modern web engineering.",
+    floatingBadge: "Front-End Enthusiast",
+    greeting: "Hi, I'm",
+    firstNameAndMiddle: "Sultana Asma",
+    highlightedLastName: "Islam",
+    professionalTitle: "CSE Student | Aspiring Front-End Developer",
+    description:
+      "I'm a final-semester Computer Science and Engineering (CSE) student at Daffodil International University (Class of 2026). I enjoy turning ideas into clean, responsive, and modern web interfaces. I'm continuously learning, building projects, and improving my skills to become a professional Front-End Developer.",
+    infoCards: [
+      {
+        id: "goal",
+        title: "My Goal",
+        description:
+          "To grow as a professional Front-End Developer and build meaningful, user-focused web applications.",
+        accent: "blue",
+      },
+      {
+        id: "working-on",
+        title: "Currently Working On",
+        description:
+          "Improving my React skills and building real-world projects.",
+        accent: "cyan",
+      },
+      {
+        id: "what-i-love",
+        title: "What I Love",
+        description:
+          "Coding, UI/UX Design, Problem Solving, and Learning New Technologies.",
+        accent: "purple",
+      },
     ],
-    quickFacts: [
+    bottomCards: [
       {
-        label: "University",
-        value: "Daffodil International University",
-        meta: "B.Sc. in Computer Science & Engineering",
+        id: "semester",
+        title: "Final Semester",
+        subtitle: "CSE Student",
+        accent: "blue",
       },
       {
-        label: "Academic Stage",
-        value: "Final Semester · Class of 2026",
-        meta: "Undergraduate CSE Program",
+        id: "university",
+        title: "Daffodil International University",
+        subtitle: "Class of 2026",
+        accent: "cyan",
       },
       {
-        label: "Core Technical Stack",
-        value: "HTML, CSS, JavaScript, React",
-        meta: "Modern Front-End Development",
+        id: "focus",
+        title: "Front-End Focus",
+        subtitle: "Web Development",
+        accent: "purple",
       },
       {
-        label: "Location",
-        value: "Dhaka, Bangladesh",
-        meta: "Open to On-Site & Remote Opportunities",
+        id: "learning",
+        title: "Always Learning",
+        subtitle: "To Build Better",
+        accent: "blue",
       },
     ],
     primaryInterests: [
