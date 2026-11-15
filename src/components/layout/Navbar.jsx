@@ -67,7 +67,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-portfolio items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
         {/* Brand Monogram & Name */}
         <a
-          href="#hero"
+          href="#about"
           className="group flex items-center gap-3 focus-visible:rounded-md"
           aria-label={`${owner.fullName} — Home`}
         >
