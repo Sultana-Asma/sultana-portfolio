@@ -69,11 +69,6 @@ export default function AboutSection() {
       <div className="relative mx-auto max-w-portfolio px-4 sm:px-6 lg:px-8">
         {/* A. Section Heading */}
         <div className="about-header about-reveal about-reveal--delay-1">
-          <div className="about-eyebrow-pill">
-            <span className="about-eyebrow-dot" aria-hidden="true" />
-            <span>{about.label}</span>
-          </div>
-
           <h2 id="about-heading" className="about-main-title font-display">
             Get to <span className="about-name-gradient">Know Me</span>
           </h2>
@@ -83,7 +78,7 @@ export default function AboutSection() {
 
         {/* B. Main Profile Area (Left Avatar | Middle Bio | Right 3 Info Cards) */}
         <div className="about-main-grid">
-          {/* Left Side: Circular Profile Frame + Blue Gradient Decor + Floating Badge */}
+          {/* Left Side: Circular Profile Frame + Blue Gradient Decor */}
           <div className="about-avatar-col about-reveal about-reveal--delay-2">
             <div className="about-avatar-stage">
               {/* Decorative Gradient Aura & Concentric Rings */}
@@ -98,14 +93,6 @@ export default function AboutSection() {
                   alt={`${owner.fullName} — ${owner.title}`}
                   className="about-avatar-img"
                 />
-              </div>
-
-              {/* Floating Badge: Front-End Enthusiast */}
-              <div className="about-floating-badge">
-                <span className="about-floating-badge-icon" aria-hidden="true">
-                  <Sparkles className="h-3.5 w-3.5" />
-                </span>
-                <span>{about.floatingBadge}</span>
               </div>
             </div>
           </div>
