@@ -219,93 +219,39 @@ export const portfolioData = {
 
   projects: {
     sectionIndex: "03",
-    eyebrow: "FEATURED PROJECTS",
-    heading: "Selected Front-End Projects & UI Showcase.",
+    eyebrow: "FEATURED PROJECT",
+    heading: "Projects",
+    badgeLabel: "My Project",
     description:
-      "Structured project placeholders ready to be populated with your real academic, personal, and GitHub repositories.",
-    categories: ["All", "React", "JavaScript", "HTML & CSS", "UI/UX"],
-    items: [
-      {
-        id: "project-01",
-        index: "01",
-        title: "[PLACEHOLDER: Project 01 — Modern React Web Application]",
-        category: "React",
-        shortDescription:
-          "[PLACEHOLDER: Concise 1–2 sentence summary of this React application, the problem it solves, and its core interactive features.]",
-        fullDescription:
-          "[PLACEHOLDER: Detailed breakdown of the component hierarchy, state management approach, and responsive UI decisions built with React, JavaScript, and CSS.]",
-        keyFeatures: [
-          "Modular React functional components and custom hooks",
-          "Responsive dark-mode layout across mobile and desktop",
-          "Dynamic filtering and interactive user feedback",
-        ],
-        technologies: ["React", "JavaScript", "CSS", "HTML"],
-        liveUrl: "",
-        githubUrl: "https://github.com/Sultana-Asma",
-        isPlaceholder: true,
-        previewLabel: "React Component Architecture",
-      },
-      {
-        id: "project-02",
-        index: "02",
-        title: "[PLACEHOLDER: Project 02 — Responsive Multi-Section Landing Page]",
-        category: "HTML & CSS",
-        shortDescription:
-          "[PLACEHOLDER: Concise summary highlighting mobile-first responsive web design, CSS Grid architecture, and modern typography.]",
-        fullDescription:
-          "[PLACEHOLDER: Detailed explanation of how semantic HTML5 and modern CSS Grid/Flexbox were used to achieve a pixel-accurate, accessible layout across all viewports.]",
-        keyFeatures: [
-          "Semantic HTML5 structure and WCAG contrast compliance",
-          "Fluid typography and multi-breakpoint CSS Grid layout",
-          "Smooth navigation and interactive hover states",
-        ],
-        technologies: ["HTML", "CSS", "JavaScript"],
-        liveUrl: "",
-        githubUrl: "https://github.com/Sultana-Asma",
-        isPlaceholder: true,
-        previewLabel: "Responsive Web Design",
-      },
-      {
-        id: "project-03",
-        index: "03",
-        title: "[PLACEHOLDER: Project 03 — Interactive JavaScript Web Utility]",
-        category: "JavaScript",
-        shortDescription:
-          "[PLACEHOLDER: Concise summary demonstrating clean ES6+ JavaScript logic, DOM manipulation, and dynamic state updates.]",
-        fullDescription:
-          "[PLACEHOLDER: Detailed overview of the client-side algorithms, event handling, and validation workflows engineered in vanilla JavaScript.]",
-        keyFeatures: [
-          "Clean ES6+ modular JavaScript architecture",
-          "Real-time DOM updates and client-side input validation",
-          "Keyboard-accessible controls and responsive layout",
-        ],
-        technologies: ["JavaScript", "HTML", "CSS"],
-        liveUrl: "",
-        githubUrl: "https://github.com/Sultana-Asma",
-        isPlaceholder: true,
-        previewLabel: "Interactive ES6+ JavaScript",
-      },
-      {
-        id: "project-04",
-        index: "04",
-        title: "[PLACEHOLDER: Project 04 — Modern UI/UX Interface Concept]",
-        category: "UI/UX",
-        shortDescription:
-          "[PLACEHOLDER: Concise summary of a modern user interface concept translated into reusable React and CSS components.]",
-        fullDescription:
-          "[PLACEHOLDER: Detailed notes on visual hierarchy, spacing tokens, and interactive component states designed for an intuitive user experience.]",
-        keyFeatures: [
-          "Consistent design system tokens and dark surface hierarchy",
-          "Reusable UI primitives (cards, badges, modals, forms)",
-          "Built with React and modern CSS",
-        ],
-        technologies: ["React", "CSS", "HTML"],
-        liveUrl: "",
-        githubUrl: "https://github.com/Sultana-Asma",
-        isPlaceholder: true,
-        previewLabel: "Modern UI/UX System",
-      },
-    ],
+      "A featured showcase of my academic and front-end development work, responsive architecture, and modern user interface design.",
+    featuredProject: {
+      id: "featured-project-01",
+      badge: "Academic Project",
+      title: "Modern React Web Application",
+      subtitle: "Interactive Front-End Architecture & Responsive Web Experience",
+      description:
+        "An interactive, responsive web application engineered with React, modern CSS, and clean JavaScript. Designed with modular component hierarchy, client-side state handling, and accessible navigation for an engaging user experience.",
+      language: "JavaScript (ES6+)",
+      library: "React.js / CSS3",
+      domain: "Front-End Web Development",
+      liveUrl: "",
+      githubUrl: "https://github.com/Sultana-Asma",
+      previewImage: "", // Leave empty for high-fidelity interactive mockup or set to image path
+      previewLabel: "Web Application UI Preview",
+      keyFeatures: [
+        "Modular React functional component hierarchy and custom state management",
+        "Fluid mobile-first responsive layout adapting seamlessly to all screen sizes",
+        "Clean client-side state handling, dynamic filtering, and seamless interactions",
+        "Semantic HTML5 structure with accessible navigation and high performance",
+      ],
+      technologies: [
+        { name: "React.js", category: "Library" },
+        { name: "JavaScript (ES6+)", category: "Language" },
+        { name: "HTML5 & CSS3", category: "Styling" },
+        { name: "Responsive Design", category: "UI/UX" },
+        { name: "Git & GitHub", category: "Tool" },
+      ],
+    },
   },
 
   education: {
