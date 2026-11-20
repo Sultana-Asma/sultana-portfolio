@@ -148,7 +148,7 @@ export const portfolioData = {
         name: "C Programming",
         category: "Programming Language",
         level: "Basic",
-        percentage: 30,
+        percentage: 40,
         accent: "blue",
         tagline: "Foundational Programming & Problem Solving",
         description: "Basic knowledge of C language and algorithmic fundamentals.",
