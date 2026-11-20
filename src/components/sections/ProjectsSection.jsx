@@ -175,7 +175,7 @@ export default function ProjectsSection() {
                 <button
                   type="button"
                   onClick={() => setIsCaseStudyOpen(true)}
-                  className="project-btn-primary group"
+                  className="project-btn-primary group w-full sm:w-auto justify-center"
                   aria-haspopup="dialog"
                   aria-expanded={isCaseStudyOpen}
                 >
@@ -343,13 +343,13 @@ export default function ProjectsSection() {
               className="case-study-header"
               style={{ backgroundColor: "#11172a" }}
             >
-              <span className="font-mono text-xs font-semibold tracking-widest text-cyan-400">
+              <span className="truncate mr-2 font-mono text-[10.5px] sm:text-xs font-semibold tracking-wider sm:tracking-widest text-cyan-400">
                 {caseStudy?.headerTag || "03 / 2026 // COMPUTER GRAPHICS • C++ / OPENGL"}
               </span>
               <button
                 type="button"
                 onClick={() => setIsCaseStudyOpen(false)}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-hairline bg-surface text-ink-secondary transition-all hover:border-accent-primary hover:bg-accent-primary hover:text-white"
+                className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full border border-hairline bg-surface text-ink-secondary transition-all hover:border-accent-primary hover:bg-accent-primary hover:text-white"
                 aria-label="Close Case Study Modal"
               >
                 <X className="h-4 w-4" />
@@ -358,7 +358,7 @@ export default function ProjectsSection() {
 
             {/* Modal Scrollable Content Body */}
             <div
-              className="case-study-body space-y-6"
+              className="case-study-body space-y-5 sm:space-y-6"
               style={{ backgroundColor: "#0c101d" }}
             >
               {/* Interactive Screen Display Area */}
@@ -379,49 +379,49 @@ export default function ProjectsSection() {
                   className="case-study-controls-bar"
                   style={{ backgroundColor: "#11172a" }}
                 >
-                  <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                     <button
                       type="button"
                       onClick={() => setActiveMode("day")}
-                      className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 font-mono text-xs font-semibold transition-all ${
+                      className={`inline-flex items-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl px-2.5 sm:px-4 py-1.5 sm:py-2 font-mono text-[11px] sm:text-xs font-semibold transition-all ${
                         activeMode === "day"
                           ? "border border-accent-primary/60 bg-accent-primary text-white shadow-[0_0_16px_rgba(59,130,246,0.5)]"
                           : "border border-hairline bg-surface text-ink-secondary hover:text-white"
                       }`}
                     >
-                      <Sun className="h-3.5 w-3.5" />
+                      <Sun className="h-3.5 w-3.5 shrink-0" />
                       <span>Daytime Scene</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => setActiveMode("night")}
-                      className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 font-mono text-xs font-semibold transition-all ${
+                      className={`inline-flex items-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl px-2.5 sm:px-4 py-1.5 sm:py-2 font-mono text-[11px] sm:text-xs font-semibold transition-all ${
                         activeMode === "night"
                           ? "border border-purple-500/60 bg-purple-600 text-white shadow-[0_0_16px_rgba(168,85,247,0.5)]"
                           : "border border-hairline bg-surface text-ink-secondary hover:text-white"
                       }`}
                     >
-                      <Moon className="h-3.5 w-3.5" />
+                      <Moon className="h-3.5 w-3.5 shrink-0" />
                       <span>Night & Solar Lamps</span>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => setActiveMode("rain")}
-                      className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 font-mono text-xs font-semibold transition-all ${
+                      className={`inline-flex items-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl px-2.5 sm:px-4 py-1.5 sm:py-2 font-mono text-[11px] sm:text-xs font-semibold transition-all ${
                         activeMode === "rain"
                           ? "border border-cyan-500/60 bg-cyan-600 text-white shadow-[0_0_16px_rgba(34,211,238,0.5)]"
                           : "border border-hairline bg-surface text-ink-secondary hover:text-white"
                       }`}
                     >
-                      <CloudRain className="h-3.5 w-3.5" />
+                      <CloudRain className="h-3.5 w-3.5 shrink-0" />
                       <span>Night Rain Mode</span>
                     </button>
                   </div>
 
                   {/* Mode Dynamic Caption */}
-                  <p className="mt-3 text-xs leading-relaxed text-slate-300">
+                  <p className="mt-2.5 sm:mt-3 text-xs leading-relaxed text-slate-300">
                     {currentModeInfo?.caption}
                   </p>
                 </div>
@@ -493,11 +493,11 @@ export default function ProjectsSection() {
               {/* Bottom Tech Pills & GitHub Action */}
               <div className="case-study-footer">
                 {/* Tech Pills */}
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                   {["C++", "OpenGL", "GLUT", "Computer Graphics"].map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-lg border border-slate-700 bg-surface px-3 py-1 font-mono text-xs text-slate-300"
+                      className="rounded-lg border border-slate-700 bg-surface px-2.5 sm:px-3 py-1 font-mono text-[10.5px] sm:text-xs text-slate-300"
                     >
                       {tech}
                     </span>
@@ -509,7 +509,7 @@ export default function ProjectsSection() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-accent-primary/50 bg-gradient-to-r from-accent-primary to-accent-secondary px-5 py-2.5 font-sans text-xs font-semibold text-white shadow-[0_0_18px_rgba(59,130,246,0.4)] transition-all hover:scale-105"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-accent-primary/50 bg-gradient-to-r from-accent-primary to-accent-secondary px-5 py-2.5 font-sans text-xs font-semibold text-white shadow-[0_0_18px_rgba(59,130,246,0.4)] transition-all hover:scale-105"
                 >
                   <Github className="h-4 w-4" />
                   <span>View on GitHub</span>

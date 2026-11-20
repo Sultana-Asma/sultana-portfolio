@@ -63,13 +63,20 @@ export default function VillageSimulationCanvas({
     if (!ctx) return;
 
     let animationFrameId;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let width = canvas.offsetWidth;
+    let height = canvas.offsetHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
 
     const handleResize = () => {
       if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
+      width = canvas.offsetWidth;
+      height = canvas.offsetHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
     };
     window.addEventListener("resize", handleResize);
 

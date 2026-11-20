@@ -57,14 +57,14 @@ export default function SkillsSection() {
               <SurfaceCard
                 key={skill.id}
                 interactive
-                className="flex flex-col justify-between p-6 sm:p-8"
+                className="flex flex-col justify-between p-5 sm:p-7 md:p-8"
               >
                 <div>
                   {/* Card Header matching Picture 2 */}
-                  <div className="flex items-center justify-between border-b border-hairline pb-4">
-                    <div className="flex items-center gap-3.5">
+                  <div className="flex flex-wrap sm:flex-nowrap items-start sm:items-center justify-between gap-3 border-b border-hairline pb-4">
+                    <div className="flex items-center gap-3 sm:gap-3.5">
                       <span
-                        className={`flex h-11 w-11 items-center justify-center rounded-xl border ${
+                        className={`flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border ${
                           isViolet
                             ? "border-accent-secondary/30 bg-accent-secondary/10 text-accent-secondary"
                             : isCyan
@@ -84,16 +84,16 @@ export default function SkillsSection() {
                         />
                       </span>
                       <div>
-                        <span className="font-mono text-[11px] uppercase tracking-widest text-ink-muted">
+                        <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-ink-muted">
                           0{idx + 1} // {skill.category}
                         </span>
-                        <h3 className="font-display text-xl font-bold text-ink-primary">
+                        <h3 className="font-display text-lg sm:text-xl font-bold text-ink-primary">
                           {skill.name}
                         </h3>
                       </div>
                     </div>
                     <span
-                      className={`rounded-full border px-3 py-1 font-mono text-[11px] font-medium ${
+                      className={`shrink-0 rounded-full border px-2.5 sm:px-3 py-0.5 sm:py-1 font-mono text-[10px] sm:text-[11px] font-medium ${
                         isViolet
                           ? "border-accent-secondary/30 bg-accent-secondary/10 text-accent-secondary"
                           : isCyan
