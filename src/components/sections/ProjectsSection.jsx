@@ -169,7 +169,7 @@ export default function ProjectsSection() {
                 </div>
               </div>
 
-              {/* Action Buttons: View Case Study + GitHub Code */}
+              {/* Action Button: View Case Study (matching classmate's card) */}
               <div className="flex flex-wrap items-center gap-3.5 pt-1">
                 {/* View Case Study Button */}
                 <button
@@ -183,18 +183,6 @@ export default function ProjectsSection() {
                   <span>View Case Study</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </button>
-
-                {/* GitHub Code Link */}
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-btn-secondary"
-                >
-                  <Github className="h-4 w-4" aria-hidden="true" />
-                  <span>GitHub Code</span>
-                  <ExternalLink className="h-3.5 w-3.5 text-ink-muted" aria-hidden="true" />
-                </a>
               </div>
             </div>
 
