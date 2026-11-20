@@ -42,9 +42,8 @@ export const portfolioData = {
     { label: "Skills", href: "#skills", index: "02" },
     { label: "Projects", href: "#projects", index: "03" },
     { label: "Education", href: "#education", index: "04" },
-    { label: "Journey", href: "#journey", index: "05" },
-    { label: "Services", href: "#services", index: "06" },
-    { label: "Contact", href: "#contact", index: "07" },
+    { label: "Services", href: "#services", index: "05" },
+    { label: "Contact", href: "#contact", index: "06" },
   ],
 
   hero: {
@@ -338,7 +337,7 @@ export const portfolioData = {
   },
 
   services: {
-    sectionIndex: "06",
+    sectionIndex: "05",
     eyebrow: "SERVICES",
     heading: "Front-End Development Services.",
     description:
@@ -387,7 +386,7 @@ export const portfolioData = {
   },
 
   contact: {
-    sectionIndex: "07",
+    sectionIndex: "06",
     eyebrow: "CONTACT",
     heading: "Let's Connect for Internships, Projects, or Collaborations.",
     description:
