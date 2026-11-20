@@ -335,19 +335,26 @@ export default function ProjectsSection() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="case-study-title"
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6"
+          className="case-study-overlay"
         >
-          {/* Backdrop Blur Overlay */}
+          {/* Backdrop Blur Overlay - Solid Dark Tint */}
           <div
-            className="fixed inset-0 bg-black/85 backdrop-blur-xl transition-opacity"
+            className="case-study-backdrop"
+            style={{ backgroundColor: "rgba(3, 6, 16, 0.92)" }}
             onClick={() => setIsCaseStudyOpen(false)}
             aria-hidden="true"
           />
 
-          {/* Modal Container */}
-          <div className="relative z-10 flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-accent-primary/45 bg-[#0a0d18] shadow-[0_0_80px_rgba(59,130,246,0.35)]">
+          {/* Modal Container - 100% Solid Dark Charcoal Surface */}
+          <div
+            className="case-study-modal"
+            style={{ backgroundColor: "#0c101d" }}
+          >
             {/* Modal Header Bar */}
-            <div className="flex items-center justify-between border-b border-hairline px-6 py-4 bg-surface/60">
+            <div
+              className="case-study-header"
+              style={{ backgroundColor: "#11172a" }}
+            >
               <span className="font-mono text-xs font-semibold tracking-widest text-cyan-400">
                 {caseStudy?.headerTag || "03 / 2026 // COMPUTER GRAPHICS • C++ / OPENGL"}
               </span>
@@ -361,10 +368,16 @@ export default function ProjectsSection() {
               </button>
             </div>
 
-            {/* Modal Scrollable Content */}
-            <div className="overflow-y-auto p-5 sm:p-7 space-y-6">
+            {/* Modal Scrollable Content Body */}
+            <div
+              className="case-study-body space-y-6"
+              style={{ backgroundColor: "#0c101d" }}
+            >
               {/* Interactive Screen Display Area */}
-              <div className="relative overflow-hidden rounded-2xl border border-slate-700/80 bg-[#090b14] shadow-2xl">
+              <div
+                className="case-study-screen-box"
+                style={{ backgroundColor: "#05070e" }}
+              >
                 {/* Visual Image Container with Enhanced Multi-Layer Simulation */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-black rounded-t-2xl">
                   <VillageSimulationCanvas
@@ -373,8 +386,11 @@ export default function ProjectsSection() {
                   />
                 </div>
 
-                {/* Mode Selector Tabs (Matching Picture 2) */}
-                <div className="border-t border-slate-800 bg-[#0e1222] p-4">
+                {/* Mode Selector Tabs (Matching Reference Image) */}
+                <div
+                  className="case-study-controls-bar"
+                  style={{ backgroundColor: "#11172a" }}
+                >
                   <div className="flex flex-wrap items-center gap-2">
                     <button
                       type="button"
@@ -439,7 +455,10 @@ export default function ProjectsSection() {
               {/* 2 Subcards: Problem/Context & Approach/Execution */}
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {/* Problem / Context */}
-                <div className="rounded-2xl border border-slate-800 bg-[#0e1222]/80 p-5 shadow-lg">
+                <div
+                  className="case-study-info-card"
+                  style={{ backgroundColor: "#13192e" }}
+                >
                   <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-cyan-400">
                     Problem / Context
                   </span>
@@ -449,7 +468,10 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Approach & Execution */}
-                <div className="rounded-2xl border border-slate-800 bg-[#0e1222]/80 p-5 shadow-lg">
+                <div
+                  className="case-study-info-card"
+                  style={{ backgroundColor: "#13192e" }}
+                >
                   <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-accent-primary">
                     Approach & Execution
                   </span>
@@ -460,7 +482,10 @@ export default function ProjectsSection() {
               </div>
 
               {/* Key Deliverables Card */}
-              <div className="rounded-2xl border border-slate-800 bg-[#0e1222]/80 p-5 shadow-lg">
+              <div
+                className="case-study-info-card"
+                style={{ backgroundColor: "#13192e" }}
+              >
                 <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-purple-400">
                   Key Deliverables
                 </span>
@@ -478,7 +503,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Bottom Tech Pills & GitHub Action */}
-              <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-5 sm:flex-row">
+              <div className="case-study-footer">
                 {/* Tech Pills */}
                 <div className="flex flex-wrap items-center gap-2">
                   {["C++", "OpenGL", "GLUT", "Computer Graphics"].map((tech) => (
