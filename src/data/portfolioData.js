@@ -139,46 +139,57 @@ export const portfolioData = {
   skills: {
     sectionIndex: "02",
     eyebrow: "TECHNICAL SKILLS",
-    heading: "My Technical",
-    headingAccent: "Skills",
+    heading: "My Technical Skills",
     description:
       "I'm continuously learning and improving my skills in web development.",
-    skillCards: [
+    primarySkills: [
       {
         id: "c-programming",
         name: "C Programming",
+        category: "Programming Language",
         level: "Beginner",
-        levelBadgeColor: "purple",
-        description: "Basic knowledge of C language.",
         percentage: 30,
+        accent: "violet",
+        tagline: "Foundational Programming & Problem Solving",
+        description: "Basic knowledge of C language and algorithmic fundamentals.",
         iconType: "c",
       },
       {
         id: "html",
         name: "HTML",
+        category: "Semantic Markup",
         level: "Basic",
-        levelBadgeColor: "blue",
-        description: "Basic understanding of HTML.",
         percentage: 40,
+        accent: "blue",
+        tagline: "Structured & Accessible Document Architecture",
+        description: "Basic understanding of semantic HTML tags and page structure.",
         iconType: "html",
       },
       {
         id: "ms-word",
         name: "MS Word",
+        category: "Documentation & Tools",
         level: "Familiar",
-        levelBadgeColor: "cyan",
-        description: "Comfortable with MS Word.",
         percentage: 70,
+        accent: "cyan",
+        tagline: "Professional Documentation & Office Productivity",
+        description: "Comfortable with MS Word, document formatting, and writing.",
         iconType: "word",
       },
+      {
+        id: "currently-learning",
+        name: "CSS and JavaScript",
+        category: "Continuous Learning",
+        level: "In Progress",
+        percentage: 35,
+        accent: "violet",
+        tagline: "Interactive & Modern Web Development",
+        description:
+          "Exploring these technologies to build more interactive and dynamic websites.",
+        iconType: "learning",
+        link: "#projects",
+      },
     ],
-    currentlyLearning: {
-      eyebrow: "Currently Learning",
-      tech: "CSS and JavaScript",
-      description:
-        "Exploring these technologies to build more interactive and dynamic websites.",
-      link: "#projects",
-    },
     interestsDetail: [
       {
         title: "Front-End Development",
