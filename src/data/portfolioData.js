@@ -138,7 +138,7 @@ export const portfolioData = {
 
   skills: {
     sectionIndex: "02",
-    eyebrow: "MY SKILLS",
+    eyebrow: "TECHNICAL SKILLS",
     heading: "My Technical",
     headingAccent: "Skills",
     description:
@@ -157,7 +157,7 @@ export const portfolioData = {
         id: "html",
         name: "HTML",
         level: "Basic",
-        levelBadgeColor: "purple",
+        levelBadgeColor: "blue",
         description: "Basic understanding of HTML.",
         percentage: 40,
         iconType: "html",
@@ -179,6 +179,33 @@ export const portfolioData = {
         "Exploring these technologies to build more interactive and dynamic websites.",
       link: "#projects",
     },
+    interestsDetail: [
+      {
+        title: "Front-End Development",
+        summary:
+          "Engineering clean, maintainable client-side web interfaces with modern standards.",
+      },
+      {
+        title: "Responsive Web Design",
+        summary:
+          "Crafting fluid layouts that adapt seamlessly across mobile, tablet, and desktop screens.",
+      },
+      {
+        title: "Modern UI Development",
+        summary:
+          "Building sleek, component-driven dark and light interfaces with crisp visual hierarchy.",
+      },
+      {
+        title: "UI/UX Design",
+        summary:
+          "Prioritizing intuitive navigation, readability, and frictionless user journeys.",
+      },
+      {
+        title: "Web Technologies",
+        summary:
+          "Continuously exploring modern web APIs, performance best practices, and modern workflows.",
+      },
+    ],
   },
 
   projects: {

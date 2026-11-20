@@ -2957,27 +2957,4 @@ section[id] {
   transform: translateY(-2px);
 }
 
-/* Skills Section Custom Enhancements & Light Theme Support */
-[data-theme="light"] #skills {
-  background: #f8fafc;
-}
-
-[data-theme="light"] #skills h2,
-[data-theme="light"] #skills h3 {
-  color: #0f172a;
-}
-
-[data-theme="light"] #skills p {
-  color: #475569;
-}
-
-[data-theme="light"] #skills .bg-gradient-to-b {
-  background: #ffffff;
-  border-color: rgba(226, 232, 240, 0.9);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] #skills .font-mono.text-white {
-  color: #0f172a;
-}
 
