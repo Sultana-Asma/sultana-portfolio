@@ -266,13 +266,13 @@ export const portfolioData = {
             id: "night",
             label: "Night & Solar Lamps",
             caption:
-              "Nighttime environmental simulation with automated sun-to-moon transition, illuminated solar streetlamps, and twinkling stars.",
+              "Nighttime simulation featuring automated sun-to-moon transition, glowing crescent moon, 36 twinkling stars, shooting star, cozy cottage interior window lights, and illuminated solar streetlamps.",
           },
           {
             id: "rain",
             label: "Night Rain Mode",
             caption:
-              "Dynamic 200-particle rainfall simulation with keyboard triggers ('s'/'t'), dark rainy sky, and swaying boat physics.",
+              "Dynamic 190-particle rainfall simulation with physics-based raindrops, river water ripples & splashes, distant lightning flash, and keyboard controls ('s' / 't').",
           },
         ],
       },

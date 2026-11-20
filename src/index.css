@@ -3002,40 +3002,114 @@ section[id] {
   transform: translateY(-2px);
 }
 
-/* Smart Village Night & Rain Visual Simulation Modes */
-.village-mode--night {
-  filter: brightness(0.42) contrast(1.25) saturate(0.8) hue-rotate(195deg);
-  transition: filter 0.4s ease;
+/* Smart Village High-Fidelity Visual Simulation Modes */
+.village-img--day {
+  filter: brightness(1) contrast(1) saturate(1);
+  transition: filter 0.6s ease;
 }
 
-.village-mode--rain {
-  filter: brightness(0.38) contrast(1.3) saturate(0.7) hue-rotate(200deg);
-  transition: filter 0.4s ease;
+.village-img--night {
+  filter: brightness(0.62) contrast(1.16) saturate(0.72) hue-rotate(186deg);
+  transition: filter 0.6s ease;
 }
 
-@keyframes rainFall {
-  0% {
-    background-position: 0% 0%;
+.village-img--rain {
+  filter: brightness(0.55) contrast(1.22) saturate(0.65) hue-rotate(192deg);
+  transition: filter 0.6s ease;
+}
+
+/* Solar Lamp Cones of Light */
+.village-lamp-cone {
+  position: absolute;
+  top: 2px;
+  left: -14px;
+  width: 30px;
+  height: 52px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(254, 240, 138, 0.85) 0%,
+    rgba(250, 204, 21, 0.35) 45%,
+    rgba(250, 204, 21, 0.08) 80%,
+    transparent 100%
+  );
+  filter: blur(1.5px);
+  pointer-events: none;
+  animation: lampFlicker 4s ease-in-out infinite alternate;
+}
+
+@keyframes lampFlicker {
+  0%, 100% {
+    opacity: 0.92;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Night Shooting Star Animation */
+.village-shooting-star {
+  position: absolute;
+  top: 14%;
+  left: 22%;
+  width: 75px;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(147, 197, 253, 0.6),
+    transparent
+  );
+  transform: rotate(-35deg);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.85));
+  opacity: 0;
+  animation: shootingStar 7.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shootingStar {
+  0%, 78% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-35deg) scaleX(0.2);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(35px, 25px) rotate(-35deg) scaleX(1);
+  }
+  84% {
+    opacity: 0;
+    transform: translate(110px, 80px) rotate(-35deg) scaleX(1.4);
   }
   100% {
-    background-position: 15% 100%;
+    opacity: 0;
   }
 }
 
-.rain-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    105deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 70%,
-    rgba(147, 197, 253, 0.45) 85%,
-    rgba(255, 255, 255, 0) 100%
+/* Moonlit River Water Shimmer */
+.village-water-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(254, 240, 138, 0.04) 20%,
+    rgba(254, 240, 138, 0.28) 50%,
+    rgba(254, 240, 138, 0.04) 80%,
+    transparent 100%
   );
-  background-size: 80px 140px;
-  animation: rainFall 0.45s linear infinite;
+  filter: blur(1px);
+  animation: waterShimmer 3s ease-in-out infinite alternate;
 }
+
+@keyframes waterShimmer {
+  0% {
+    opacity: 0.55;
+    transform: scaleX(0.9) skewX(-2deg);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scaleX(1.1) skewX(2deg);
+  }
+}
+
 
 
 

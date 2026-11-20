@@ -20,6 +20,7 @@ import {
   Eye,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
+import VillageSimulationCanvas from "@/components/common/VillageSimulationCanvas";
 
 export default function ProjectsSection() {
   const { projects } = portfolioData;
@@ -236,14 +237,12 @@ export default function ProjectsSection() {
                 <div className="project-window-screen relative">
                   {project.previewImage && !imageError ? (
                     <>
-                      <img
-                        src={project.previewImage}
-                        alt={project.title}
-                        onError={() => setImageError(true)}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      <VillageSimulationCanvas
+                        activeMode={activeMode}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                       />
                       {/* Floating Badge (matching classmate's 3 SCREENSHOTS badge) */}
-                      <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-full border border-white/20 bg-black/75 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur-md">
+                      <div className="absolute bottom-3 right-3 z-30 flex items-center gap-1.5 rounded-full border border-white/20 bg-black/75 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur-md">
                         <Sparkles className="h-3 w-3 text-cyan-400" />
                         <span>3 Modes • Interactive</span>
                       </div>
@@ -366,44 +365,12 @@ export default function ProjectsSection() {
             <div className="overflow-y-auto p-5 sm:p-7 space-y-6">
               {/* Interactive Screen Display Area */}
               <div className="relative overflow-hidden rounded-2xl border border-slate-700/80 bg-[#090b14] shadow-2xl">
-                {/* Visual Image Container with Mode Filter */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
-                  <img
-                    src="/smart-village.png"
-                    alt="Smart Village Scenario"
-                    className={`h-full w-full object-cover transition-all duration-500 ${
-                      activeMode === "night"
-                        ? "village-mode--night"
-                        : activeMode === "rain"
-                        ? "village-mode--rain"
-                        : ""
-                    }`}
+                {/* Visual Image Container with Enhanced Multi-Layer Simulation */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black rounded-t-2xl">
+                  <VillageSimulationCanvas
+                    activeMode={activeMode}
+                    className="h-full w-full"
                   />
-
-                  {/* Night Mode Overhead Elements (Moon & Stars) */}
-                  {(activeMode === "night" || activeMode === "rain") && (
-                    <div
-                      className="pointer-events-none absolute inset-0 z-10"
-                      aria-hidden="true"
-                    >
-                      {/* Night Stars */}
-                      <div className="absolute top-4 left-1/4 h-1 w-1 rounded-full bg-white shadow-[0_0_6px_#fff] animate-pulse" />
-                      <div className="absolute top-8 left-1/3 h-1.5 w-1.5 rounded-full bg-cyan-200 shadow-[0_0_8px_#67e8f9] animate-ping" />
-                      <div className="absolute top-6 left-1/2 h-1 w-1 rounded-full bg-white shadow-[0_0_4px_#fff]" />
-                      <div className="absolute top-12 left-2/3 h-1 w-1 rounded-full bg-white shadow-[0_0_6px_#fff] animate-pulse" />
-
-                      {/* Glowing Moon */}
-                      <div className="absolute top-5 right-12 flex h-9 w-9 items-center justify-center rounded-full bg-amber-100 shadow-[0_0_24px_rgba(254,240,138,0.9),0_0_45px_rgba(254,240,138,0.6)]" />
-
-                      {/* Solar Lamp Glows */}
-                      <div className="absolute top-[38%] right-[18%] h-4 w-4 rounded-full bg-amber-300 blur-[3px] shadow-[0_0_16px_rgba(252,211,77,1)]" />
-                    </div>
-                  )}
-
-                  {/* Rain Mode Falling Particles Overlay */}
-                  {activeMode === "rain" && (
-                    <div className="rain-overlay z-20" aria-hidden="true" />
-                  )}
                 </div>
 
                 {/* Mode Selector Tabs (Matching Picture 2) */}
