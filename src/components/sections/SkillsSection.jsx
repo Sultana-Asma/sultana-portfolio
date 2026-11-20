@@ -2,7 +2,7 @@ import React from "react";
 import {
   Code2,
   FileCode2,
-  FileText,
+  Database,
   Lightbulb,
   ArrowRight,
   Terminal,
@@ -17,6 +17,9 @@ function SkillCardIcon({ type, className = "" }) {
   }
   if (type === "html") {
     return <Code2 className={`h-5 w-5 ${className}`} aria-hidden="true" />;
+  }
+  if (type === "database") {
+    return <Database className={`h-5 w-5 ${className}`} aria-hidden="true" />;
   }
   if (type === "word") {
     return <span className={`font-display text-lg font-black ${className}`}>W</span>;
