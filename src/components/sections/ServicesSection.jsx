@@ -5,7 +5,7 @@ import {
   ArrowRight,
   Handshake,
   Mail,
-  FileText,
+  Database,
 } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 import SurfaceCard from "@/components/ui/SurfaceCard";
@@ -45,6 +45,9 @@ function ServiceOrbitalIcon({ type, accent }) {
         )}
         {type === "c" && (
           <span className="font-display text-2xl font-black">C</span>
+        )}
+        {type === "database" && (
+          <Database className="h-6 w-6" aria-hidden="true" />
         )}
         {type === "word" && (
           <span className="font-display text-2xl font-black">W</span>
