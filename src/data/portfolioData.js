@@ -236,10 +236,46 @@ export const portfolioData = {
       language: "C++ / C",
       library: "OpenGL / GLUT",
       domain: "Computer Graphics",
-      liveUrl: "https://github.com/Shariar-Ahamed/smart-village-scenario-cg-project#readme",
-      githubUrl: "https://github.com/Shariar-Ahamed/smart-village-scenario-cg-project",
+      liveUrl: "https://github.com/Shariar-Ahamed/smart-village-scenario-cg-project/tree/feature-sultana",
+      githubUrl: "https://github.com/Shariar-Ahamed/smart-village-scenario-cg-project/tree/feature-sultana",
       previewImage: "/smart-village.png",
       previewLabel: "village_scenery.exe",
+      caseStudy: {
+        headerTag: "03 / 2026 // COMPUTER GRAPHICS • C++ / OPENGL",
+        title: "Smart Village Scenario — 2D OpenGL Simulation",
+        description:
+          "Animated Bangladeshi riverside village built in C++ with OpenGL & GLUT, featuring DDA line drawing, Midpoint Circle rendering, day-to-night cycle, and interactive rain.",
+        problemContext:
+          "Required building a complete multi-object 2D animated scene from low-level OpenGL primitives, custom rasterization routines, and frame-by-frame motion without external game engines.",
+        approachExecution:
+          "Implemented DDA line drawing, Midpoint Circle geometry, layered transformations, automatic sun/moon day-night transitions, blinking stars, solar lamps, and keyboard-controlled rain and boat scaling across a 1,133-line C++/GLUT application.",
+        keyDeliverables: [
+          "Custom DDA Line & Midpoint Circle Rasterization Primitives",
+          "Automated Sun/Moon Day-to-Night Cycle & Illuminated Solar Streetlamps",
+          "Rotating Windmill Blades, Mechanical Gear & Multi-Speed Villager Animation",
+          "Keyboard-Controlled 200-Particle Rain ('s'/'t') & Boat Scale ('+' / '-' / 'r')",
+        ],
+        modes: [
+          {
+            id: "day",
+            label: "Daytime Scene",
+            caption:
+              "Daytime animated riverside village rendered in OpenGL/GLUT featuring moving sun, drifting clouds, rotating windmill, tube well, walking villagers, and sailing boat.",
+          },
+          {
+            id: "night",
+            label: "Night & Solar Lamps",
+            caption:
+              "Nighttime environmental simulation with automated sun-to-moon transition, illuminated solar streetlamps, and twinkling stars.",
+          },
+          {
+            id: "rain",
+            label: "Night Rain Mode",
+            caption:
+              "Dynamic 200-particle rainfall simulation with keyboard triggers ('s'/'t'), dark rainy sky, and swaying boat physics.",
+          },
+        ],
+      },
       keyFeatures: [
         "Core graphics algorithms implementation using DDA line and Midpoint circle drawing",
         "Interactive day and night environment modes with dynamic sun, moon, and star animations",
