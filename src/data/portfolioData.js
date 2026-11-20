@@ -138,82 +138,47 @@ export const portfolioData = {
 
   skills: {
     sectionIndex: "02",
-    eyebrow: "TECHNICAL SKILLS",
-    heading: "Core Technologies & Front-End Capabilities.",
+    eyebrow: "MY SKILLS",
+    heading: "My Technical",
+    headingAccent: "Skills",
     description:
-      "Focused on strong web fundamentals and component-driven interface development using my verified technical stack.",
-    primarySkills: [
+      "I'm continuously learning and improving my skills in web development.",
+    skillCards: [
+      {
+        id: "c-programming",
+        name: "C Programming",
+        level: "Beginner",
+        levelBadgeColor: "purple",
+        description: "Basic knowledge of C language.",
+        percentage: 30,
+        iconType: "c",
+      },
       {
         id: "html",
         name: "HTML",
-        category: "Semantic Markup",
-        accent: "blue",
-        tagline: "Structured, Accessible & SEO-Ready Document Architecture",
-        capabilities: [
-          "Semantic HTML5 landmarks and clean DOM hierarchy",
-          "Accessible forms, keyboard navigation, and ARIA standards",
-          "Structured metadata and search-engine-friendly markup",
-        ],
+        level: "Basic",
+        levelBadgeColor: "purple",
+        description: "Basic understanding of HTML.",
+        percentage: 40,
+        iconType: "html",
       },
       {
-        id: "css",
-        name: "CSS",
-        category: "Styling & Responsive Layout",
-        accent: "violet",
-        tagline: "Modern Layouts, Design Systems & Fluid Responsiveness",
-        capabilities: [
-          "CSS Grid and Flexbox for complex multi-device layouts",
-          "Mobile-first responsive web design across all screen sizes",
-          "Custom properties (CSS variables), dark UI theming, and smooth transitions",
-        ],
-      },
-      {
-        id: "javascript",
-        name: "JavaScript",
-        category: "Interactive Logic",
-        accent: "blue",
-        tagline: "Dynamic Client-Side Behavior & Modern ES6+ Programming",
-        capabilities: [
-          "DOM manipulation, event handling, and interactive UI states",
-          "Modern ES6+ syntax, modular functions, and array data filtering",
-          "Client-side form validation and asynchronous API integration",
-        ],
-      },
-      {
-        id: "react",
-        name: "React",
-        category: "Component UI Architecture",
-        accent: "violet",
-        tagline: "Modular, Declarative & Reusable Front-End Interfaces",
-        capabilities: [
-          "Reusable functional components and clean prop composition",
-          "Interactive state management with React Hooks (useState, useEffect, useMemo)",
-          "Single-page application flows and dynamic component rendering",
-        ],
+        id: "ms-word",
+        name: "MS Word",
+        level: "Familiar",
+        levelBadgeColor: "cyan",
+        description: "Comfortable with MS Word.",
+        percentage: 70,
+        iconType: "word",
       },
     ],
-    interestsDetail: [
-      {
-        title: "Front-End Development",
-        summary: "Engineering clean, maintainable client-side web interfaces with modern standards.",
-      },
-      {
-        title: "Responsive Web Design",
-        summary: "Crafting fluid layouts that adapt seamlessly across mobile, tablet, and desktop screens.",
-      },
-      {
-        title: "Modern UI Development",
-        summary: "Building sleek, component-driven dark and light interfaces with crisp visual hierarchy.",
-      },
-      {
-        title: "UI/UX Design",
-        summary: "Prioritizing intuitive navigation, readability, and frictionless user journeys.",
-      },
-      {
-        title: "Web Technologies",
-        summary: "Continuously exploring modern web APIs, performance best practices, and React workflows.",
-      },
-    ],
+    currentlyLearning: {
+      eyebrow: "Currently Learning",
+      tech: "CSS and JavaScript",
+      description:
+        "Exploring these technologies to build more interactive and dynamic websites.",
+      link: "#projects",
+    },
   },
 
   projects: {
