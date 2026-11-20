@@ -8,12 +8,11 @@ export default function SurfaceCard({
 }) {
   return (
     <Component
-      className={`rounded-xl border border-hairline bg-elevated p-6 transition-all duration-200 ${
+      className={`surface-card rounded-xl border border-accent-primary/40 bg-elevated p-6 transition-all duration-300 ${
         interactive
-          ? "hover:-translate-y-1 hover:border-accent-primary/60"
+          ? "hover:-translate-y-1 hover:border-accent-primary/75"
           : ""
       } ${className}`}
-      style={{ boxShadow: "var(--shadow-card)" }}
     >
       {children}
     </Component>

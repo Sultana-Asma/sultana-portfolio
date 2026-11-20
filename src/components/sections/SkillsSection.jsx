@@ -172,7 +172,7 @@ export default function SkillsSection() {
             {skills.interestsDetail.map((interest, idx) => (
               <div
                 key={interest.title}
-                className="rounded-xl border border-hairline bg-elevated p-5 transition-colors hover:border-accent-primary/50"
+                className="rounded-xl border border-accent-primary/40 bg-elevated p-5 transition-all duration-300 shadow-[0_0_24px_-4px_rgba(59,130,246,0.3)] hover:-translate-y-1 hover:border-accent-primary/75 hover:shadow-[0_0_36px_-2px_rgba(59,130,246,0.5)]"
               >
                 <span className="font-mono text-xs font-semibold text-accent-primary">
                   0{idx + 1}
