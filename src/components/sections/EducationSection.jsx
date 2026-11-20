@@ -191,7 +191,7 @@ export default function EducationSection() {
                         className="h-3.5 w-3.5 text-accent-secondary"
                         aria-hidden="true"
                       />
-                      Parbatipur
+                      {item.location}
                     </span>
                   </div>
                 </SurfaceCard>
