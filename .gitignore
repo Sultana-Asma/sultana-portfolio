@@ -23,6 +23,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-# local temp folder
-/temp
+# Office temp files
+~$*
+*.tmp
 
