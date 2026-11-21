@@ -1,0 +1,20 @@
+Topic: My Portfolio Website — Design, Implementation & Learning
+
+Requirements:
+- Slides: 6 to 10 maximum.
+- Explain theory briefly but focus on your real website + justification of your choices.
+- Time: 4 minutes (max) for presentation + 1 minute for questions/answer.
+- Show a short live demo of your website in the browser.
+- Every student must present their own work.
+
+Slide Structure:
+Slide 1: Title Slide (Project title, name, ID, batch/section, course teacher)
+Slide 2: Introduction (What the website is, target audience, goal)
+Slide 3: Website Structure (Sitemap and purpose of each page / section)
+Slide 4: HTML or Technology Used (Main tags used: lists, table, form, links, images, js etc)
+Slide 5: Key Features (Navigation, table, contact form, media)
+Slide 6: Code Explanation (One or two important code snippets and why you used them)
+Slide 7: Output & Demo (Screenshots of pages, then live demo)
+Slide 8: Challenges & Solutions (Problems faced and how you solved them)
+Slide 9: Future Improvements (CSS, JavaScript, responsiveness, hosting etc)
+Slide 10: Conclusion & Q&A (Summary, what you learned, questions)

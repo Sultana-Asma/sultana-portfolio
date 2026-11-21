@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio Website — Presentation Slides | Sultana Asma Islam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090c15;
+      --card-bg: #0f1526;
+      --card-border: rgba(59, 130, 246, 0.35);
+      --accent: #3b82f6;
+      --accent-cyan: #22d3ee;
+      --accent-purple: #a855f7;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --code-bg: #06080f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    /* Top Control Header */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+      background: rgba(15, 21, 38, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-badge {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .timer-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      cursor: pointer;
+    }
+
+    .timer-warning {
+      background: rgba(234, 179, 8, 0.15) !important;
+      color: #facc15 !important;
+      border-color: rgba(234, 179, 8, 0.4) !important;
+    }
+
+    .timer-overtime {
+      background: rgba(239, 68, 68, 0.15) !important;
+      color: #f87171 !important;
+      border-color: rgba(239, 68, 68, 0.4) !important;
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Main Deck Stage */
+    .deck-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1000px;
+      min-height: 580px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 40px -10px rgba(59, 130, 246, 0.3);
+      position: relative;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Slide Header */
+    .slide-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .slide-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.35rem;
+    }
+
+    .slide-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .slide-title span {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    /* Slide Body */
+    .slide-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .feature-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 1.25rem 1.4rem;
+      transition: border-color 0.2s;
+    }
+
+    .feature-box:hover {
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+
+    .feature-box h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-box p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .feature-box ul {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .feature-box li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.45;
+    }
+
+    .feature-box li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Code Snippet Box */
+    .code-box {
+      background: var(--code-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      overflow-x: auto;
+    }
+
+    .code-keyword { color: #f472b6; font-weight: 600; }
+    .code-fn { color: #60a5fa; }
+    .code-comment { color: #64748b; font-style: italic; }
+    .code-num { color: #facc15; }
+
+    /* Slide Footer */
+    .slide-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1rem;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Bottom Navigation Bar */
+    .bottom-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      background: rgba(15, 21, 38, 0.85);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      padding: 0.5rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .slide-indicator {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Print Styles for PDF Export */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+      }
+      .top-bar, .bottom-nav {
+        display: none !important;
+      }
+      .deck-stage {
+        padding: 0 !important;
+      }
+      .slide {
+        display: flex !important;
+        page-break-after: always;
+        break-after: page;
+        min-height: 100vh !important;
+        max-width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #000 !important;
+        border-radius: 0 !important;
+        padding: 2.5rem !important;
+      }
+      .slide-title { color: #0f172a !important; }
+      .slide-title span { -webkit-text-fill-color: #2563eb !important; }
+      .feature-box { background: #f8fafc !important; border-color: #cbd5e1 !important; }
+      .feature-box h4 { color: #0f172a !important; }
+      .feature-box p, .feature-box li { color: #334155 !important; }
+      .code-box { background: #0f172a !important; color: #f8fafc !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Control Header -->
+  <header class="top-bar">
+    <div class="brand">
+      <span class="brand-badge">DIU • CSE</span>
+      <span>Sultana Asma Islam — Presentation Deck</span>
+    </div>
+
+    <div class="controls">
+      <!-- 4-Minute Presentation Timer -->
+      <div id="timer" class="timer-badge" onclick="toggleTimer()" title="Click to Start / Pause Timer">
+        <span>⏱️</span>
+        <span id="time-display">04:00</span>
+      </div>
+
+      <button class="btn" onclick="toggleFullscreen()" title="Fullscreen (F11)">⛶ Fullscreen</button>
+      <button class="btn" onclick="window.print()" title="Print / Save to PDF (Ctrl+P)">🖨️ PDF Export</button>
+    </div>
+  </header>
+
+  <!-- Slide Stage -->
+  <main class="deck-stage">
+
+    <!-- ========================================== -->
+    <!-- SLIDE 1: Title Slide                       -->
+    <!-- ========================================== -->
+    <section class="slide active" id="slide-1">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">Daffodil International University • Dept. of CSE</div>
+          <h1 class="slide-title">My Portfolio Website: <span>Design, Implementation & Learning</span></h1>
+        </div>
+        <span class="slide-badge">Slide 01 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-2">
+          <!-- Presenter Info -->
+          <div class="feature-box" style="border-color: rgba(59, 130, 246, 0.45); background: rgba(59, 130, 246, 0.05);">
+            <h4 style="color: #60a5fa;">👤 Presenter Details</h4>
+            <ul>
+              <li><strong>Name:</strong> Sultana Asma Islam</li>
+              <li><strong>Student ID:</strong> <span>[Your DIU Student ID]</span></li>
+              <li><strong>Program:</strong> B.Sc. in Computer Science and Engineering</li>
+              <li><strong>Semester / Batch:</strong> Final Semester (Class of 2026)</li>
+              <li><strong>GitHub:</strong> github.com/Sultana-Asma</li>
+            </ul>
+          </div>
+
+          <!-- Academic & Supervisor Info -->
+          <div class="feature-box">
+            <h4>🎓 Academic Supervision</h4>
+            <ul>
+              <li><strong>Institution:</strong> Daffodil International University</li>
+              <li><strong>Department:</strong> Department of CSE, FSIT</li>
+              <li><strong>Course Title:</strong> <span>[e.g. Web Engineering / Academic Project]</span></li>
+              <li><strong>Supervised By:</strong> <span>[Course Teacher's Name & Designation]</span></li>
+              <li><strong>Presentation Time:</strong> 4 Minutes (+1 Min Q&A)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Topic: Personal Developer Portfolio Engineering</span>
+        <span>01 // Title</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 2: Introduction                      -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-2">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">01 // Executive Context</div>
+          <h2 class="slide-title">Project Overview & <span>Target Audience</span></h2>
+        </div>
+        <span class="slide-badge">Slide 02 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-3">
+          <div class="feature-box">
+            <h4>🌐 What the Website Is</h4>
+            <p>A modern, interactive developer portfolio engineered with <strong>Semantic HTML5</strong>, <strong>Modern CSS3</strong>, and <strong>React component architecture</strong> to showcase academic engineering coursework.</p>
+          </div>
+
+          <div class="feature-box">
+            <h4>🎯 Target Audience</h4>
+            <ul>
+              <li><strong>Technical Recruiters:</strong> Assessing front-end proficiency and clean code standards.</li>
+              <li><strong>Academic Evaluators:</strong> Reviewing implementation rigor & coursework deliverables.</li>
+              <li><strong>Engineering Peers:</strong> Open-source project collaboration.</li>
+            </ul>
+          </div>
+
+          <div class="feature-box">
+            <h4>🚀 Core Objectives</h4>
+            <ul>
+              <li>Establish an authentic, credible digital identity beyond a static PDF resume.</li>
+              <li>Interactive showcase for desktop OpenGL computer graphics simulations.</li>
+              <li>Demonstrate 100% responsive, accessible web engineering.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>02 // Introduction</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 3: Website Structure & Sitemap       -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-3">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">02 // Information Architecture</div>
+          <h2 class="slide-title">Website Structure & <span>Sectional Sitemap</span></h2>
+        </div>
+        <span class="slide-badge">Slide 03 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-2">
+          <div class="feature-box">
+            <h4>🏗️ Single Page Application (SPA)</h4>
+            <p>Engineered as a high-performance SPA to eliminate page-reload latency. Navigation is handled through a sticky blurred header with active scroll-tracking.</p>
+            <div style="margin-top: 0.75rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #38bdf8;">
+              #about ➔ #skills ➔ #projects ➔ #education ➔ #services ➔ #contact
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <h4>📋 6 Core Content Sections</h4>
+            <ul>
+              <li><strong>01 // About Me:</strong> Bio, CSE journey, and professional focus.</li>
+              <li><strong>02 // Skills:</strong> 2x2 grid with animated percentage progress bars.</li>
+              <li><strong>03 // Projects:</strong> Smart Village simulation + Case Study modal.</li>
+              <li><strong>04 // Education:</strong> DIU B.Sc., HSC (5.00), and SSC (4.94).</li>
+              <li><strong>05 // Services:</strong> Webpage, C basics, and SQL query design.</li>
+              <li><strong>06 // Contact:</strong> Direct channels & bot-protected form.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>03 // Structure</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 4: HTML & Technologies Used          -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-4">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">03 // Technical Stack</div>
+          <h2 class="slide-title">Technologies & <span>Semantic Elements</span></h2>
+        </div>
+        <span class="slide-badge">Slide 04 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-3">
+          <div class="feature-box">
+            <h4>🏷️ Semantic HTML5</h4>
+            <p>Constructed using semantic milestone elements:</p>
+            <ul>
+              <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> for sticky app bar.</li>
+              <li><code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> for clean hierarchy.</li>
+              <li><code>&lt;canvas&gt;</code> for 60 FPS rain simulation.</li>
+              <li><code>&lt;form&gt;</code> with ARIA accessibility roles.</li>
+            </ul>
+          </div>
+
+          <div class="feature-box">
+            <h4>🎨 Modern CSS3 Styling</h4>
+            <ul>
+              <li><strong>CSS Custom Tokens:</strong> Centralized theme color variables.</li>
+              <li><strong>CSS Grid & Flexbox:</strong> Fluid multi-device alignment.</li>
+              <li><strong>Fluid Typography:</strong> <code>clamp()</code> for smooth scaling.</li>
+              <li><strong>Glassmorphism:</strong> Hardware-accelerated <code>backdrop-filter</code>.</li>
+            </ul>
+          </div>
+
+          <div class="feature-box">
+            <h4>⚡ React.js & Tooling</h4>
+            <ul>
+              <li><strong>Component Modularity:</strong> Clean reusable UI hierarchy.</li>
+              <li><strong>React Hooks:</strong> <code>useState</code>, <code>useEffect</code>, <code>useRef</code>.</li>
+              <li><strong>Vite Bundler:</strong> Sub-second hot module replacement.</li>
+              <li><strong>Lucide SVG:</strong> Resolution-independent iconography.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>04 // Technologies</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 5: Key Features                      -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-5">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">04 // Core Engineering</div>
+          <h2 class="slide-title">Key Features & <span>Interactive Capabilities</span></h2>
+        </div>
+        <span class="slide-badge">Slide 05 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-2">
+          <div class="feature-box">
+            <h4>🌧️ Interactive Simulation Modal</h4>
+            <ul>
+              <li><strong>Solves the OpenGL Web Barrier:</strong> Desktop C++ apps can't run in browsers; our interactive modal brings the scenery to life.</li>
+              <li><strong>3 Atmospheric Modes:</strong> Daytime Scene, Night & Solar Lamps, and Night Rain Mode.</li>
+              <li><strong>Physics Rain Engine:</strong> 190 raindrops + river ripple collisions.</li>
+            </ul>
+          </div>
+
+          <div class="feature-box">
+            <h4>🌓 Personalization & UX Features</h4>
+            <ul>
+              <li><strong>Dark / Light Mode:</strong> Persistent CSS variable theme switcher.</li>
+              <li><strong>Skills Progress Bars:</strong> Visual glowing proficiency metrics.</li>
+              <li><strong>Anti-Spam Form Security:</strong> Silent Honeypot bot protection.</li>
+              <li><strong>100% Multi-Device Fluidity:</strong> Handcrafted for PC, Tab & Mobile.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>05 // Key Features</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 6: Code Explanation                  -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-6">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">05 // Code Implementation</div>
+          <h2 class="slide-title">Code Explanation & <span>Justification</span></h2>
+        </div>
+        <span class="slide-badge">Slide 06 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-2">
+          <div>
+            <div class="code-box">
+              <span class="code-comment">// Canvas Raindrop Physics & River Ripples</span><br>
+              d.y += d.speed;<br>
+              d.x += d.wind; <span class="code-comment">// Natural wind drift</span><br><br>
+              <span class="code-keyword">if</span> (d.y > height * <span class="code-num">0.67</span> && Math.<span class="code-fn">random</span>() < <span class="code-num">0.18</span>) {<br>
+              &nbsp;&nbsp;<span class="code-fn">addRipple</span>(d.x, d.y); <span class="code-comment">// Water collision</span><br>
+              }<br>
+              <span class="code-keyword">if</span> (d.y > height + <span class="code-num">20</span>) {<br>
+              &nbsp;&nbsp;d.y = -d.length; d.x = Math.<span class="code-fn">random</span>() * width;<br>
+              }
+            </div>
+            <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.5rem;">
+              <strong>Justification:</strong> Replaces heavy 80MB GIF files with a 60 FPS lightweight HTML5 Canvas engine that simulates our C++ OpenGL <code>drawRain()</code> routine.
+            </p>
+          </div>
+
+          <div>
+            <div class="code-box">
+              <span class="code-comment">// Honeypot Anti-Spam Trap (Invisible to humans)</span><br>
+              <span class="code-keyword">if</span> (formData.website && formData.website.<span class="code-fn">trim</span>() !== <span class="code-keyword">""</span>) {<br>
+              &nbsp;&nbsp;<span class="code-fn">setStatus</span>(<span class="code-keyword">"success"</span>);<br>
+              &nbsp;&nbsp;<span class="code-keyword">return</span>; <span class="code-comment">// Silently drop bot submission</span><br>
+              }
+            </div>
+            <p style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.5rem;">
+              <strong>Justification:</strong> Defends against web-scraping spam bots without frustrating legitimate evaluators with intrusive third-party CAPTCHAs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>06 // Code Explanation</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 7: Output & Demo                     -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-7">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">06 // Verification</div>
+          <h2 class="slide-title">Output Screenshots & <span>Live Browser Demo</span></h2>
+        </div>
+        <span class="slide-badge">Slide 07 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-2">
+          <div class="feature-box">
+            <h4>🖥️ Visual Deliverables</h4>
+            <ul>
+              <li><strong>Desktop Showcase:</strong> Full widescreen dark UI with electric blue accents.</li>
+              <li><strong>Mobile View:</strong> Seamless hamburger drawer navigation & fluid card stacks.</li>
+              <li><strong>Simulation Modal:</strong> Daytime, Night & Rain modes with live moon & river ripples.</li>
+            </ul>
+          </div>
+
+          <div class="feature-box" style="border-color: rgba(34, 211, 238, 0.4); background: rgba(34, 211, 238, 0.05);">
+            <h4 style="color: #38bdf8;">⏱️ 45-Second Live Demo Plan</h4>
+            <ol style="margin-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              <li>Open portfolio in browser (<code>http://localhost:3000/</code>).</li>
+              <li>Scroll to <strong>Featured Project</strong> & click <em>"View Case Study"</em>.</li>
+              <li>Toggle <strong>Night Mode</strong> (moon & solar lamps) and <strong>Rain Mode</strong> (falling raindrops & water ripples).</li>
+              <li>Inspect and resize window to show <strong>Mobile Responsiveness</strong>.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>07 // Output & Demo</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 8: Challenges & Solutions            -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-8">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">07 // Problem Solving</div>
+          <h2 class="slide-title">Challenges Faced & <span>Engineering Solutions</span></h2>
+        </div>
+        <span class="slide-badge">Slide 08 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-3">
+          <div class="feature-box">
+            <h4>⚙️ Desktop OpenGL on Web</h4>
+            <p><strong>Problem:</strong> C++ OpenGL compiles to native <code>.exe</code>, making live browser URLs impossible.<br><br>
+            <strong>Solution:</strong> Built an interactive multi-mode Case Study modal with an HTML5 Canvas simulation mimicking the C++ output.</p>
+          </div>
+
+          <div class="feature-box">
+            <h4>🎨 Modal Transparency</h4>
+            <p><strong>Problem:</strong> Initial modal had background transparency, causing body text to bleed through.<br><br>
+            <strong>Solution:</strong> Implemented a 100% solid dark charcoal slate background (<code>#0c101d</code>) and heavy backdrop blur overlay.</p>
+          </div>
+
+          <div class="feature-box">
+            <h4>📱 Mobile Viewport Breakages</h4>
+            <p><strong>Problem:</strong> 320px–360px screens experienced button squeezing and text overflow.<br><br>
+            <strong>Solution:</strong> Adopted CSS fluid <code>clamp()</code> typography, flex-wrap groups, and High-DPI canvas scaling.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>08 // Challenges</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 9: Future Improvements               -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-9">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">08 // Roadmap</div>
+          <h2 class="slide-title">Future Scope & <span>Planned Improvements</span></h2>
+        </div>
+        <span class="slide-badge">Slide 09 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-2">
+          <div class="feature-box">
+            <h4>📦 Full-Stack & Database</h4>
+            <ul>
+              <li><strong>Serverless Backend:</strong> Connect form to Node.js/Express API (e.g. Resend API).</li>
+              <li><strong>Database Storage:</strong> Store incoming inquiries in PostgreSQL / Supabase.</li>
+              <li><strong>Admin Dashboard:</strong> Protected route to manage inquiries.</li>
+            </ul>
+          </div>
+
+          <div class="feature-box">
+            <h4>🚀 WebGL, PWA & CI/CD</h4>
+            <ul>
+              <li><strong>Three.js 3D Graphics:</strong> Embed interactive 3D graphics models.</li>
+              <li><strong>Progressive Web App (PWA):</strong> Service workers for offline access.</li>
+              <li><strong>CI/CD Pipelines:</strong> Automated GitHub Actions deployment to custom domain (<code>sultanaasma.dev</code>).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>09 // Future Scope</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 10: Conclusion & Q&A                 -->
+    <!-- ========================================== -->
+    <section class="slide" id="slide-10">
+      <div class="slide-header">
+        <div>
+          <div class="slide-eyebrow">09 // Wrap Up</div>
+          <h2 class="slide-title">Conclusion & <span>Questions / Answers</span></h2>
+        </div>
+        <span class="slide-badge">Slide 10 / 10</span>
+      </div>
+
+      <div class="slide-content">
+        <div class="grid-2">
+          <div class="feature-box">
+            <h4>💡 Summary & Learnings</h4>
+            <ul>
+              <li>Successfully built a fast, responsive, modern personal engineering portfolio.</li>
+              <li>Gained deep practical mastery of Semantic HTML5, CSS Grid/Flexbox, and Canvas physics.</li>
+              <li>Solved real engineering trade-offs in cross-device accessibility and performance.</li>
+            </ul>
+          </div>
+
+          <div class="feature-box" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border-color: rgba(59, 130, 246, 0.45);">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🤝</div>
+            <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 0.4rem;">Thank You!</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">
+              "I would be glad to answer any questions from the honorable faculty."
+            </p>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #60a5fa;">
+              Q&A Session • Open for Evaluation
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Sultana Asma Islam • DIU CSE</span>
+        <span>10 // Conclusion & Q&A</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <footer class="bottom-nav">
+    <button class="nav-btn" id="prev-btn" onclick="prevSlide()" disabled>← Previous</button>
+    <div class="slide-indicator" id="slide-num">Slide 1 of 10</div>
+    <button class="nav-btn" id="next-btn" onclick="nextSlide()">Next →</button>
+  </footer>
+
+  <!-- Script for Navigation, Timer, Keyboard Shortcuts & Fullscreen -->
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 10;
+
+    function updateSlide() {
+      document.querySelectorAll('.slide').forEach((s, idx) => {
+        s.classList.toggle('active', idx + 1 === currentSlide);
+      });
+      document.getElementById('slide-num').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+      document.getElementById('prev-btn').disabled = currentSlide === 1;
+      document.getElementById('next-btn').disabled = currentSlide === totalSlides;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    // Keyboard Navigation (Arrow Keys & Space)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      }
+    });
+
+    // 4-Minute Presentation Timer
+    let totalSeconds = 4 * 60; // 240 seconds
+    let timerRunning = false;
+    let timerInterval = null;
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function toggleTimer() {
+      const timerEl = document.getElementById('timer');
+      const displayEl = document.getElementById('time-display');
+
+      if (!timerRunning) {
+        timerRunning = true;
+        timerInterval = setInterval(() => {
+          totalSeconds--;
+          displayEl.innerText = formatTime(Math.max(totalSeconds, 0));
+
+          if (totalSeconds <= 30 && totalSeconds > 0) {
+            timerEl.className = 'timer-badge timer-warning';
+          } else if (totalSeconds <= 0) {
+            timerEl.className = 'timer-badge timer-overtime';
+            displayEl.innerText = "00:00 (Time's Up!)";
+            clearInterval(timerInterval);
+          }
+        }, 1000);
+      } else {
+        timerRunning = false;
+        clearInterval(timerInterval);
+      }
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+  </script>
+</body>
+</html>
