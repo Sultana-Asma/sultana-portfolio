@@ -655,194 +655,202 @@ s6.addText(
 );
 
 // ==========================================
-// SLIDE 7: Output & Live Demo
+// SLIDE 7: Output & Live Demo (3 Un-Squashed 16:9 Outputs)
 // ==========================================
 const s7 = createBaseSlide("06 // Output & Demo", "Visual Output & Live Demo Plan", "07");
 
-// Left: Desktop Homepage Screenshot Mockup
+// --- COLUMN 1: Desktop Homepage View ---
+// Mockup Frame
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
   x: 0.8,
   y: 1.55,
-  w: 5.65,
-  h: 3.4,
+  w: 3.65,
+  h: 2.45,
   fill: { color: COLORS.cardBg },
   line: { color: COLORS.cardBorder, width: 1 },
 });
 
+// Titlebar
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
   x: 0.8,
   y: 1.55,
-  w: 5.65,
+  w: 3.65,
   h: 0.32,
   fill: { color: COLORS.codeBg },
   line: { color: COLORS.cardBorder, width: 1 },
 });
-
-s7.addShape(pptx.shapes.OVAL, { x: 0.95, y: 1.66, w: 0.09, h: 0.09, fill: { color: "EF4444" } });
-s7.addShape(pptx.shapes.OVAL, { x: 1.1, y: 1.66, w: 0.09, h: 0.09, fill: { color: "F59E0B" } });
-s7.addShape(pptx.shapes.OVAL, { x: 1.25, y: 1.66, w: 0.09, h: 0.09, fill: { color: "10B981" } });
-
-s7.addText("http://localhost:3000/ • Desktop Homepage", {
-  x: 1.45,
+s7.addShape(pptx.shapes.OVAL, { x: 0.95, y: 1.66, w: 0.08, h: 0.08, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 1.08, y: 1.66, w: 0.08, h: 0.08, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 1.21, y: 1.66, w: 0.08, h: 0.08, fill: { color: "10B981" } });
+s7.addText("localhost:3000 • Homepage", {
+  x: 1.38,
   y: 1.6,
-  w: 4.8,
+  w: 3.0,
   h: 0.22,
-  fontSize: 8.5,
+  fontSize: 8,
   fontFace: "Consolas",
   color: COLORS.textMuted,
 });
 
+// Exact 16:9 Image (3.55 x 2.0)
 const heroShotPath = path.join(__dirname, "public", "screenshots", "website-desktop-hero.png");
 if (fs.existsSync(heroShotPath)) {
   s7.addImage({
     path: heroShotPath,
     x: 0.85,
-    y: 1.9,
-    w: 5.55,
-    h: 2.7,
+    y: 1.92,
+    w: 3.55,
+    h: 2.0,
+    sizing: { type: "contain", w: 3.55, h: 2.0 },
   });
 }
 
-s7.addText("Live Homepage: Navigation bar, hero bio, call-to-action buttons, and glowing photo card", {
-  x: 0.85,
-  y: 4.65,
-  w: 5.55,
-  h: 0.28,
-  fontSize: 8.5,
-  fontFace: "Segoe UI",
-  color: COLORS.cyanAccent,
-  bold: true,
-  align: "center",
-});
-
-// Left Bottom: Live Demo Quick Steps
+// Column 1 Description Box
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
   x: 0.8,
-  y: 5.05,
-  w: 5.65,
-  h: 1.45,
+  y: 4.15,
+  w: 3.65,
+  h: 2.35,
   fill: { color: COLORS.cardBg },
-  line: { color: COLORS.cyanAccent, width: 1.2 },
+  line: { color: COLORS.cardBorder, width: 1 },
 });
-
-s7.addText("⏱️ 45-Second Live Browser Demo Steps", {
-  x: 0.95,
-  y: 5.12,
-  w: 5.35,
-  h: 0.25,
-  fontSize: 10,
-  fontFace: "Segoe UI",
-  bold: true,
-  color: COLORS.cyanAccent,
-});
-
+s7.addText("🖥️ 01 // Desktop Homepage", { x: 0.95, y: 4.25, w: 3.35, h: 0.25, fontSize: 11, bold: true, color: COLORS.cyanAccent });
 s7.addText(
-  "1. Open Chrome browser at http://localhost:3000/ (or :3001/)\n" +
-  "2. Scroll down to Skills section to demonstrate animated percentage bars\n" +
-  "3. Click 'View Case Study' button on the Smart Village project\n" +
-  "4. Toggle Daytime, Night, and Rain simulation modes live\n" +
-  "5. Resize the browser window to showcase mobile responsiveness",
-  {
-    x: 0.95,
-    y: 5.38,
-    w: 5.35,
-    h: 1.05,
-    fontSize: 8.5,
-    fontFace: "Segoe UI",
-    color: COLORS.textLight,
-    lineSpacing: 13,
-  }
+  "• Clean dark theme with electric blue glows\n\n" +
+  "• Sticky navigation bar with active scroll spy\n\n" +
+  "• Professional introduction & circular portrait\n\n" +
+  "• Direct resume download and contact triggers",
+  { x: 0.95, y: 4.58, w: 3.35, h: 1.8, fontSize: 9.5, color: COLORS.textMuted, lineSpacing: 14 }
 );
 
-// Right Top: Interactive Simulation Modal Screenshot Mockup
+// --- COLUMN 2: Technical Skills Output ---
+// Mockup Frame
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-  x: 6.88,
+  x: 4.84,
   y: 1.55,
-  w: 5.65,
-  h: 2.3,
-  fill: { color: COLORS.cardBg },
-  line: { color: COLORS.purpleAccent, width: 1.2 },
-});
-
-s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-  x: 6.88,
-  y: 1.55,
-  w: 5.65,
-  h: 0.3,
-  fill: { color: COLORS.codeBg },
-  line: { color: COLORS.purpleAccent, width: 1 },
-});
-
-s7.addShape(pptx.shapes.OVAL, { x: 7.02, y: 1.65, w: 0.08, h: 0.08, fill: { color: "EF4444" } });
-s7.addShape(pptx.shapes.OVAL, { x: 7.15, y: 1.65, w: 0.08, h: 0.08, fill: { color: "F59E0B" } });
-s7.addShape(pptx.shapes.OVAL, { x: 7.28, y: 1.65, w: 0.08, h: 0.08, fill: { color: "10B981" } });
-
-s7.addText("Simulation Modal Output (Day / Night / Rain Modes)", {
-  x: 7.45,
-  y: 1.58,
-  w: 4.9,
-  h: 0.22,
-  fontSize: 8,
-  fontFace: "Consolas",
-  color: COLORS.textLight,
-  bold: true,
-});
-
-const modalShotPath = path.join(__dirname, "public", "screenshots", "website-simulation-modal.png");
-if (fs.existsSync(modalShotPath)) {
-  s7.addImage({
-    path: modalShotPath,
-    x: 6.93,
-    y: 1.88,
-    w: 5.55,
-    h: 1.9,
-  });
-}
-
-// Right Bottom: Skills Section Output Mockup
-s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-  x: 6.88,
-  y: 4.05,
-  w: 5.65,
+  w: 3.65,
   h: 2.45,
   fill: { color: COLORS.cardBg },
   line: { color: COLORS.blueAccent, width: 1.2 },
 });
 
+// Titlebar
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-  x: 6.88,
-  y: 4.05,
-  w: 5.65,
-  h: 0.3,
+  x: 4.84,
+  y: 1.55,
+  w: 3.65,
+  h: 0.32,
   fill: { color: COLORS.codeBg },
   line: { color: COLORS.blueAccent, width: 1 },
 });
-
-s7.addShape(pptx.shapes.OVAL, { x: 7.02, y: 4.15, w: 0.08, h: 0.08, fill: { color: "EF4444" } });
-s7.addShape(pptx.shapes.OVAL, { x: 7.15, y: 4.15, w: 0.08, h: 0.08, fill: { color: "F59E0B" } });
-s7.addShape(pptx.shapes.OVAL, { x: 7.28, y: 4.15, w: 0.08, h: 0.08, fill: { color: "10B981" } });
-
-s7.addText("Technical Skills Section Output (C, HTML, SQL, CSS/JS)", {
-  x: 7.45,
-  y: 4.08,
-  w: 4.9,
+s7.addShape(pptx.shapes.OVAL, { x: 4.99, y: 1.66, w: 0.08, h: 0.08, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 5.12, y: 1.66, w: 0.08, h: 0.08, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 5.25, y: 1.66, w: 0.08, h: 0.08, fill: { color: "10B981" } });
+s7.addText("localhost:3000 • #skills", {
+  x: 5.42,
+  y: 1.6,
+  w: 3.0,
   h: 0.22,
   fontSize: 8,
   fontFace: "Consolas",
-  color: COLORS.textLight,
-  bold: true,
+  color: COLORS.textMuted,
 });
 
+// Exact 16:9 Image (3.55 x 2.0)
 const skillsShotPath = path.join(__dirname, "public", "screenshots", "website-skills-section.png");
 if (fs.existsSync(skillsShotPath)) {
   s7.addImage({
     path: skillsShotPath,
-    x: 6.93,
-    y: 4.38,
-    w: 5.55,
-    h: 2.05,
+    x: 4.89,
+    y: 1.92,
+    w: 3.55,
+    h: 2.0,
+    sizing: { type: "contain", w: 3.55, h: 2.0 },
   });
 }
+
+// Column 2 Description Box
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 4.84,
+  y: 4.15,
+  w: 3.65,
+  h: 2.35,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.blueAccent, width: 1 },
+});
+s7.addText("📊 02 // Verified Skills Grid", { x: 4.99, y: 4.25, w: 3.35, h: 0.25, fontSize: 11, bold: true, color: COLORS.blueAccent });
+s7.addText(
+  "• C Programming: 40% (Foundational basic)\n\n" +
+  "• HTML5 Semantic: 40% (Accessible markup)\n\n" +
+  "• SQL / MySQL: 65% (Schema & query design)\n\n" +
+  "• CSS & JavaScript: 35% (In continuous learning)",
+  { x: 4.99, y: 4.58, w: 3.35, h: 1.8, fontSize: 9.5, color: COLORS.textMuted, lineSpacing: 14 }
+);
+
+// --- COLUMN 3: Simulation Modal Output ---
+// Mockup Frame
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 8.88,
+  y: 1.55,
+  w: 3.65,
+  h: 2.45,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.purpleAccent, width: 1.2 },
+});
+
+// Titlebar
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 8.88,
+  y: 1.55,
+  w: 3.65,
+  h: 0.32,
+  fill: { color: COLORS.codeBg },
+  line: { color: COLORS.purpleAccent, width: 1 },
+});
+s7.addShape(pptx.shapes.OVAL, { x: 9.03, y: 1.66, w: 0.08, h: 0.08, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 9.16, y: 1.66, w: 0.08, h: 0.08, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 9.29, y: 1.66, w: 0.08, h: 0.08, fill: { color: "10B981" } });
+s7.addText("localhost:3000 • Simulation Modal", {
+  x: 9.46,
+  y: 1.6,
+  w: 3.0,
+  h: 0.22,
+  fontSize: 8,
+  fontFace: "Consolas",
+  color: COLORS.textMuted,
+});
+
+// Exact 16:9 Image (3.55 x 2.0)
+const modalShotPath = path.join(__dirname, "public", "screenshots", "website-simulation-modal.png");
+if (fs.existsSync(modalShotPath)) {
+  s7.addImage({
+    path: modalShotPath,
+    x: 8.93,
+    y: 1.92,
+    w: 3.55,
+    h: 2.0,
+    sizing: { type: "contain", w: 3.55, h: 2.0 },
+  });
+}
+
+// Column 3 Description Box: Live Demo Quick Steps
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 8.88,
+  y: 4.15,
+  w: 3.65,
+  h: 2.35,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.purpleAccent, width: 1.2 },
+});
+s7.addText("⏱️ 03 // 45-Sec Live Demo Plan", { x: 9.03, y: 4.25, w: 3.35, h: 0.25, fontSize: 11, bold: true, color: COLORS.purpleAccent });
+s7.addText(
+  "1. Open Chrome at http://localhost:3000/\n\n" +
+  "2. Scroll to Skills to show 4 progress bars\n\n" +
+  "3. Click 'View Case Study' on Smart Village\n\n" +
+  "4. Toggle Day, Night, and Rain modes live\n\n" +
+  "5. Resize window to demonstrate mobile fit",
+  { x: 9.03, y: 4.58, w: 3.35, h: 1.8, fontSize: 9.0, color: COLORS.textLight, lineSpacing: 13 }
+);
 
 // ==========================================
 // SLIDE 8: Challenges & Solutions
