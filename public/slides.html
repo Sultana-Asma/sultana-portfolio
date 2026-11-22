@@ -349,6 +349,88 @@
       color: var(--text-muted);
     }
 
+    /* Screenshots & Sitemap Diagram Styles */
+    .screenshot-frame {
+      background: #06080f;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .screenshot-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(15, 21, 38, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .screenshot-img {
+      width: 100%;
+      height: auto;
+      max-height: 250px;
+      display: block;
+      object-fit: cover;
+      object-position: top;
+    }
+    .sitemap-root {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.45);
+      border-radius: 10px;
+      padding: 0.65rem 1.25rem;
+      text-align: center;
+      margin-bottom: 0.85rem;
+    }
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.6rem;
+      margin-bottom: 0.85rem;
+    }
+    .sitemap-node {
+      background: rgba(15, 21, 38, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.6rem 0.45rem;
+      text-align: center;
+      font-size: 0.72rem;
+    }
+    .sitemap-node.active-branch {
+      border-color: #a855f7;
+      background: rgba(168, 85, 247, 0.08);
+    }
+    .sitemap-node h5 {
+      font-size: 0.8rem;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+    .sitemap-node span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: #38bdf8;
+    }
+    .sitemap-node ul {
+      margin-top: 0.4rem;
+      list-style: none;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    .sitemap-modal {
+      background: rgba(6, 8, 15, 0.85);
+      border: 1px solid rgba(168, 85, 247, 0.45);
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+    }
+
     /* Print Styles for PDF Export */
     @media print {
       body {
@@ -426,9 +508,9 @@
             <h4 style="color: #60a5fa;">👤 Presenter Details</h4>
             <ul>
               <li><strong>Name:</strong> Sultana Asma Islam</li>
-              <li><strong>Student ID:</strong> <span>[Your DIU Student ID]</span></li>
-              <li><strong>Program:</strong> B.Sc. in Computer Science and Engineering</li>
-              <li><strong>Semester / Batch:</strong> Final Semester (Class of 2026)</li>
+              <li><strong>Student ID:</strong> <span style="color: #38bdf8; font-weight: 700;">0242310005101682</span></li>
+              <li><strong>Batch:</strong> 231 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Section:</strong> 64_M</li>
+              <li><strong>Program:</strong> B.Sc. in Computer Science & Engineering (FSIT)</li>
               <li><strong>GitHub:</strong> github.com/Sultana-Asma</li>
             </ul>
           </div>
@@ -437,11 +519,11 @@
           <div class="feature-box">
             <h4>🎓 Academic Supervision</h4>
             <ul>
-              <li><strong>Institution:</strong> Daffodil International University</li>
+              <li><strong>Course Title:</strong> <span style="color: #38bdf8; font-weight: 700;">Web Computing</span></li>
+              <li><strong>Course Teacher:</strong> Md. Taufik Hasan</li>
+              <li><strong>Designation:</strong> Lecturer</li>
               <li><strong>Department:</strong> Department of CSE, FSIT</li>
-              <li><strong>Course Title:</strong> <span>[e.g. Web Engineering / Academic Project]</span></li>
-              <li><strong>Supervised By:</strong> <span>[Course Teacher's Name & Designation]</span></li>
-              <li><strong>Presentation Time:</strong> 4 Minutes (+1 Min Q&A)</li>
+              <li><strong>Institution:</strong> Daffodil International University (DIU)</li>
             </ul>
           </div>
         </div>
@@ -506,41 +588,105 @@
     <section class="slide" id="slide-3">
       <div class="slide-header">
         <div>
-          <div class="slide-eyebrow">02 // Structure</div>
-          <h2 class="slide-title">Website Structure & <span>The 6 Main Sections</span></h2>
+          <div class="slide-eyebrow">02 // Information Architecture</div>
+          <h2 class="slide-title">Website Structure & <span>Sitemap Diagram</span></h2>
         </div>
         <span class="slide-badge">Slide 03 / 10</span>
       </div>
 
       <div class="slide-content">
-        <div class="grid-2">
-          <div class="feature-box">
-            <h4>🏗️ Single Page Application (Fast & Smooth)</h4>
-            <p><strong>Fast & Smooth:</strong> Everything is on one page, so there is no waiting for pages to reload.<br><br>
-            <strong>Sticky Header Bar:</strong> The top menu stays visible as you scroll, with active section highlighting.<br><br>
-            <strong>Easy Navigation:</strong> Visitors can click any menu link to jump smoothly to that section.</p>
-            <div style="margin-top: 0.75rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #38bdf8;">
-              #about ➔ #skills ➔ #projects ➔ #education ➔ #services ➔ #contact
-            </div>
+        <!-- Root Node -->
+        <div class="sitemap-root">
+          <div style="font-weight: 700; color: #60a5fa; font-size: 0.95rem;">🌐 Single Page Application (SPA) Root Architecture</div>
+          <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;">Single entry (index.html) • Sticky Header Navigation • Smooth Client-Side Section Scrolling</div>
+        </div>
+
+        <!-- 6 Section Branches -->
+        <div class="sitemap-grid">
+          <div class="sitemap-node">
+            <h5>01. About Me</h5>
+            <span>#about</span>
+            <ul>
+              <li>• Bio & Journey</li>
+              <li>• Quick Stats</li>
+              <li>• Photo Card</li>
+            </ul>
           </div>
 
-          <div class="feature-box">
-            <h4>📋 The 6 Content Sections</h4>
+          <div class="sitemap-node">
+            <h5>02. Skills</h5>
+            <span>#skills</span>
             <ul>
-              <li><strong>1. About Me:</strong> Short bio, my CSE study at DIU, and my career focus.</li>
-              <li><strong>2. Technical Skills:</strong> 2x2 grid with progress bars for C, HTML, SQL, CSS & JS.</li>
-              <li><strong>3. Featured Projects:</strong> Smart Village OpenGL graphics with Day, Night, and Rain modes.</li>
-              <li><strong>4. Academic Background:</strong> B.Sc. at DIU, HSC (GPA 5.00), and SSC (GPA 4.94).</li>
-              <li><strong>5. Services:</strong> Basic web design, C coding, and SQL database queries.</li>
-              <li><strong>6. Contact:</strong> Simple message form with spam bot protection.</li>
+              <li>• C (40%)</li>
+              <li>• HTML/CSS (40%)</li>
+              <li>• SQL (65%)</li>
             </ul>
+          </div>
+
+          <div class="sitemap-node active-branch">
+            <h5 style="color: #c084fc;">03. Projects</h5>
+            <span>#projects</span>
+            <ul>
+              <li>• Smart Village</li>
+              <li>• C++ OpenGL</li>
+              <li><strong>[Sub-Modal ⮯]</strong></li>
+            </ul>
+          </div>
+
+          <div class="sitemap-node">
+            <h5>04. Education</h5>
+            <span>#education</span>
+            <ul>
+              <li>• DIU B.Sc (CSE)</li>
+              <li>• HSC (5.00)</li>
+              <li>• SSC (4.94)</li>
+            </ul>
+          </div>
+
+          <div class="sitemap-node">
+            <h5>05. Services</h5>
+            <span>#services</span>
+            <ul>
+              <li>• Webpage Design</li>
+              <li>• C Code Logic</li>
+              <li>• SQL Queries</li>
+            </ul>
+          </div>
+
+          <div class="sitemap-node">
+            <h5>06. Contact</h5>
+            <span>#contact</span>
+            <ul>
+              <li>• Message Form</li>
+              <li>• Honeypot Trap</li>
+              <li>• Email & Links</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sub-Modal Component -->
+        <div class="sitemap-modal">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem;">
+            <div style="font-weight: 700; color: #c084fc; font-size: 0.85rem;">🔍 Sub-Component: Smart Village Interactive Simulation Modal</div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #38bdf8;">HTML5 Canvas • 60 FPS</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; font-size: 0.75rem; color: var(--text-muted);">
+            <div style="background: rgba(15, 21, 38, 0.6); padding: 0.45rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+              <strong style="color: #facc15;">☀️ Daytime Mode:</strong> Sunny riverside with moving sailboat & windmill animation.
+            </div>
+            <div style="background: rgba(15, 21, 38, 0.6); padding: 0.45rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+              <strong style="color: #38bdf8;">🌙 Night Mode:</strong> Crescent moon, 36 sparkling stars & solar lamp illumination.
+            </div>
+            <div style="background: rgba(15, 21, 38, 0.6); padding: 0.45rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.06);">
+              <strong style="color: #60a5fa;">🌧️ Rain Mode:</strong> 190 raindrops + real-time water ripple physics in the river.
+            </div>
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
         <span>Sultana Asma Islam • DIU CSE</span>
-        <span>03 // Structure</span>
+        <span>03 // Structure & Sitemap</span>
       </div>
     </section>
 
@@ -705,41 +851,59 @@
     <section class="slide" id="slide-7">
       <div class="slide-header">
         <div>
-          <div class="slide-eyebrow">06 // Output & Demo</div>
-          <h2 class="slide-title">Visual Output & <span>My 45-Second Live Demo Plan</span></h2>
+          <div class="slide-eyebrow">06 // Output & Live Demo</div>
+          <h2 class="slide-title">Visual Output & <span>Actual Website Screenshots</span></h2>
         </div>
         <span class="slide-badge">Slide 07 / 10</span>
       </div>
 
       <div class="slide-content">
         <div class="grid-2">
-          <div class="feature-box">
-            <h4>🖥️ Visual Output Deliverables</h4>
-            <ul>
-              <li><strong>Full Desktop View:</strong> Dark theme with blue neon glows and clean card layouts.</li>
-              <li><strong>Mobile Phone View:</strong> Adaptive mobile menu drawer and stacked readable cards.</li>
-              <li><strong>Case Study Popup:</strong> Interactive Day, Night, and Rain simulation modes.</li>
-              <li><strong>GitHub Code Link:</strong> Connects directly to my branch on GitHub so teachers can review my code.</li>
-            </ul>
+          <!-- Desktop Screenshot Mockup -->
+          <div class="screenshot-frame">
+            <div class="screenshot-bar">
+              <span class="dot" style="background: #ef4444;"></span>
+              <span class="dot" style="background: #f59e0b;"></span>
+              <span class="dot" style="background: #10b981;"></span>
+              <span style="margin-left: 6px;">localhost:3000 • Desktop Homepage</span>
+            </div>
+            <img src="screenshots/website-desktop-hero.png" alt="Desktop Homepage Screenshot" class="screenshot-img" />
+            <div style="padding: 0.5rem 0.8rem; font-size: 0.75rem; color: #38bdf8; font-weight: 600; text-align: center; background: rgba(15, 21, 38, 0.8);">
+              Actual Desktop View: Hero, Bio, Navigation & Skills Card
+            </div>
           </div>
 
-          <div class="feature-box" style="border-color: rgba(34, 211, 238, 0.4); background: rgba(34, 211, 238, 0.05);">
-            <h4 style="color: #38bdf8;">⏱️ My 45-Second Live Demo Plan</h4>
-            <ol style="margin-left: 1.2rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-              <li>Open website in Google Chrome (<code>http://localhost:3000/</code> or <code>:3001/</code>).</li>
-              <li>Scroll to Skills section to show the animated progress bars.</li>
-              <li>Click <strong>"View Case Study"</strong> button on Smart Village project.</li>
-              <li>Click <strong>"Night & Solar Lamps"</strong> to show moon and streetlamp lights.</li>
-              <li>Click <strong>"Night Rain Mode"</strong> to show falling rain and water ripples.</li>
-              <li>Resize browser window to show that it adapts smoothly to mobile view.</li>
-            </ol>
+          <!-- Right Column: Modal Screenshot + Demo Plan -->
+          <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+            <!-- Modal Screenshot Mockup -->
+            <div class="screenshot-frame" style="border-color: rgba(168, 85, 247, 0.45);">
+              <div class="screenshot-bar" style="background: rgba(20, 15, 35, 0.95);">
+                <span class="dot" style="background: #ef4444;"></span>
+                <span class="dot" style="background: #f59e0b;"></span>
+                <span class="dot" style="background: #10b981;"></span>
+                <span style="margin-left: 6px; color: #c084fc;">Smart Village Interactive Simulation Modal</span>
+              </div>
+              <img src="screenshots/website-simulation-modal.png" alt="Simulation Modal Screenshot" class="screenshot-img" style="max-height: 130px;" />
+            </div>
+
+            <!-- Demo Steps Box -->
+            <div class="feature-box" style="border-color: rgba(34, 211, 238, 0.4); background: rgba(34, 211, 238, 0.05); padding: 0.65rem 0.9rem;">
+              <h4 style="color: #38bdf8; font-size: 0.82rem; margin-bottom: 0.35rem;">⏱️ 45-Second Live Demo Quick Plan</h4>
+              <ol style="margin-left: 1.1rem; font-size: 0.74rem; color: var(--text-muted); line-height: 1.4;">
+                <li>Open website in Google Chrome (<code>http://localhost:3000/</code>).</li>
+                <li>Scroll to Skills section to show animated percentage bars.</li>
+                <li>Click <strong>"View Case Study"</strong> on Smart Village project.</li>
+                <li>Toggle <strong>Night Mode</strong> & <strong>Rain Mode</strong> to show canvas physics.</li>
+                <li>Resize browser window to demonstrate mobile responsiveness.</li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="slide-footer">
         <span>Sultana Asma Islam • DIU CSE</span>
-        <span>07 // Output & Demo</span>
+        <span>07 // Output & Screenshots</span>
       </div>
     </section>
 

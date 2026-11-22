@@ -175,19 +175,23 @@ s1.addText([
   { text: "Name: ", options: { bold: true, color: COLORS.textLight } },
   { text: "Sultana Asma Islam\n", options: { color: COLORS.textLight } },
   { text: "Student ID: ", options: { bold: true, color: COLORS.textLight } },
-  { text: "[Your DIU Student ID]\n", options: { color: COLORS.cyanAccent } },
+  { text: "0242310005101682\n", options: { color: COLORS.cyanAccent } },
+  { text: "Batch: ", options: { bold: true, color: COLORS.textLight } },
+  { text: "231          ", options: { color: COLORS.textLight } },
+  { text: "Section: ", options: { bold: true, color: COLORS.textLight } },
+  { text: "64_M\n", options: { color: COLORS.textLight } },
   { text: "Program: ", options: { bold: true, color: COLORS.textLight } },
-  { text: "B.Sc. in CSE (Final Semester)\n", options: { color: COLORS.textMuted } },
+  { text: "B.Sc. in CSE (FSIT)\n", options: { color: COLORS.textMuted } },
   { text: "GitHub: ", options: { bold: true, color: COLORS.textLight } },
   { text: "github.com/Sultana-Asma", options: { color: COLORS.blueAccent } },
 ], {
   x: 1.35,
-  y: 3.95,
+  y: 3.9,
   w: 5.1,
-  h: 2.0,
+  h: 2.1,
   fontSize: 11,
   fontFace: "Segoe UI",
-  lineSpacing: 21,
+  lineSpacing: 19,
 });
 
 // Card 2: Academic & Course Supervision
@@ -212,22 +216,24 @@ s1.addText("ACADEMIC SUPERVISION", {
 });
 
 s1.addText([
-  { text: "Institution: ", options: { bold: true, color: COLORS.textLight } },
-  { text: "Daffodil International University (DIU)\n", options: { color: COLORS.textLight } },
   { text: "Course: ", options: { bold: true, color: COLORS.textLight } },
-  { text: "[e.g. Web Engineering / Academic Project]\n", options: { color: COLORS.cyanAccent } },
-  { text: "Supervised By: ", options: { bold: true, color: COLORS.textLight } },
-  { text: "[Course Teacher's Name & Title]\n", options: { color: COLORS.textMuted } },
-  { text: "Time Limit: ", options: { bold: true, color: COLORS.textLight } },
-  { text: "4 Minutes Presentation + 1 Min Q&A", options: { color: COLORS.textLight } },
+  { text: "Web Computing\n", options: { bold: true, color: COLORS.cyanAccent } },
+  { text: "Course Teacher: ", options: { bold: true, color: COLORS.textLight } },
+  { text: "Md. Taufik Hasan\n", options: { color: COLORS.textLight } },
+  { text: "Designation: ", options: { bold: true, color: COLORS.textLight } },
+  { text: "Lecturer\n", options: { color: COLORS.textMuted } },
+  { text: "Department: ", options: { bold: true, color: COLORS.textLight } },
+  { text: "Dept. of Computer Science & Engineering\n", options: { color: COLORS.textMuted } },
+  { text: "Institution: ", options: { bold: true, color: COLORS.textLight } },
+  { text: "Daffodil International University (DIU)", options: { color: COLORS.textLight } },
 ], {
   x: 7.2,
-  y: 3.95,
+  y: 3.9,
   w: 5.1,
-  h: 2.0,
+  h: 2.1,
   fontSize: 11,
   fontFace: "Segoe UI",
-  lineSpacing: 21,
+  lineSpacing: 19,
 });
 
 // ==========================================
@@ -266,32 +272,258 @@ s2.addText(
 );
 
 // ==========================================
-// SLIDE 3: Website Structure & Sitemap
+// SLIDE 3: Website Structure & Sitemap Diagram
 // ==========================================
-const s3 = createBaseSlide("02 // Structure", "Website Structure & The 6 Main Sections", "03");
+const s3 = createBaseSlide("02 // Structure", "Website Structure & Sitemap Diagram", "03");
 
-// Left Box: SPA
-s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s3.addText("🏗️ Single Page Application (Fast & Smooth)", { x: 1.05, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
-s3.addText(
-  "• Fast & Smooth: Everything is on one page, so there is no waiting for pages to reload.\n\n" +
-  "• Sticky Header Bar: The top menu stays visible as you scroll, with active section highlighting.\n\n" +
-  "• Easy Navigation: Visitors can click any menu link to jump smoothly to that section.",
-  { x: 1.05, y: 2.2, w: 5.15, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 21 }
-);
+// Top Root Node: SPA Architecture
+s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 3.66,
+  y: 1.55,
+  w: 6.0,
+  h: 0.65,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.blueAccent, width: 1.5 },
+});
 
-// Right Box: 6 Sections
-s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 6.88, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s3.addText("📋 The 6 Content Sections", { x: 7.13, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
-s3.addText(
-  "1. About Me: Short bio, my CSE study at DIU, and my career focus.\n\n" +
-  "2. Technical Skills: 2x2 grid with progress bars for C, HTML, SQL, CSS & JS.\n\n" +
-  "3. Featured Projects: Smart Village OpenGL graphics with Day, Night, and Rain modes.\n\n" +
-  "4. Academic Background: B.Sc. at DIU, HSC (GPA 5.00), and SSC (GPA 4.94).\n\n" +
-  "5. Services: Basic web design, C coding, and SQL database queries.\n\n" +
-  "6. Contact: Simple message form with spam bot protection.",
-  { x: 7.13, y: 2.2, w: 5.15, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 16 }
-);
+s3.addText("🌐 SINGLE PAGE APPLICATION (SPA) ROOT", {
+  x: 3.66,
+  y: 1.62,
+  w: 6.0,
+  h: 0.28,
+  fontSize: 11,
+  fontFace: "Segoe UI",
+  color: COLORS.cyanAccent,
+  bold: true,
+  align: "center",
+});
+
+s3.addText("Sticky Header Navigation • Smooth Client-Side Section Scrolling", {
+  x: 3.66,
+  y: 1.9,
+  w: 6.0,
+  h: 0.24,
+  fontSize: 9.5,
+  fontFace: "Segoe UI",
+  color: COLORS.textMuted,
+  align: "center",
+});
+
+// Vertical trunk line
+s3.addShape(pptx.shapes.RECTANGLE, {
+  x: 6.64,
+  y: 2.2,
+  w: 0.05,
+  h: 0.35,
+  fill: { color: COLORS.cyanAccent },
+  line: { color: COLORS.cyanAccent },
+});
+
+// Horizontal branch distribution bar
+s3.addShape(pptx.shapes.RECTANGLE, {
+  x: 1.65,
+  y: 2.55,
+  w: 10.03,
+  h: 0.04,
+  fill: { color: COLORS.cyanAccent },
+  line: { color: COLORS.cyanAccent },
+});
+
+// 6 Section Cards
+const sitemapSections = [
+  {
+    title: "01. About Me",
+    anchor: "#about",
+    color: COLORS.blueAccent,
+    points: "• Short Bio\n• Quick Metrics\n• DIU Identity\n• Profile Image",
+  },
+  {
+    title: "02. Skills",
+    anchor: "#skills",
+    color: COLORS.cyanAccent,
+    points: "• C Coding (40%)\n• HTML/CSS (40%)\n• SQL (65%)\n• Toolchain",
+  },
+  {
+    title: "03. Projects",
+    anchor: "#projects",
+    color: COLORS.purpleAccent,
+    points: "• Smart Village\n• C++ OpenGL\n• Feature Tags\n• [Sub-Modal ⮯]",
+  },
+  {
+    title: "04. Education",
+    anchor: "#education",
+    color: COLORS.blueAccent,
+    points: "• DIU B.Sc (CSE)\n• HSC (GPA 5.00)\n• SSC (GPA 4.94)\n• Achievements",
+  },
+  {
+    title: "05. Services",
+    anchor: "#services",
+    color: COLORS.cyanAccent,
+    points: "• Webpage Design\n• C Programming\n• SQL Queries\n• Fast Delivery",
+  },
+  {
+    title: "06. Contact",
+    anchor: "#contact",
+    color: COLORS.blueAccent,
+    points: "• Message Form\n• Honeypot Bot Trap\n• Direct Email\n• Social Icons",
+  },
+];
+
+sitemapSections.forEach((sec, idx) => {
+  const xPos = 0.85 + idx * 2.01;
+
+  // Drop line from horizontal bar
+  s3.addShape(pptx.shapes.RECTANGLE, {
+    x: xPos + 0.86,
+    y: 2.55,
+    w: 0.04,
+    h: 0.22,
+    fill: { color: COLORS.cyanAccent },
+    line: { color: COLORS.cyanAccent },
+  });
+
+  // Card box
+  s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+    x: xPos,
+    y: 2.77,
+    w: 1.78,
+    h: 1.85,
+    fill: { color: COLORS.cardBg },
+    line: { color: sec.title.includes("Projects") ? COLORS.purpleAccent : COLORS.cardBorder, width: sec.title.includes("Projects") ? 1.5 : 1 },
+  });
+
+  // Section Title
+  s3.addText(sec.title, {
+    x: xPos + 0.08,
+    y: 2.87,
+    w: 1.62,
+    h: 0.28,
+    fontSize: 10,
+    fontFace: "Segoe UI",
+    bold: true,
+    color: COLORS.textLight,
+    align: "center",
+  });
+
+  // Anchor Badge
+  s3.addText(sec.anchor, {
+    x: xPos + 0.08,
+    y: 3.15,
+    w: 1.62,
+    h: 0.22,
+    fontSize: 8.5,
+    fontFace: "Consolas",
+    color: sec.color,
+    align: "center",
+  });
+
+  // Bullet points
+  s3.addText(sec.points, {
+    x: xPos + 0.12,
+    y: 3.42,
+    w: 1.54,
+    h: 1.1,
+    fontSize: 8.5,
+    fontFace: "Segoe UI",
+    color: COLORS.textMuted,
+    lineSpacing: 13,
+  });
+});
+
+// Drop line from Projects Card to Sub-Modal
+s3.addShape(pptx.shapes.RECTANGLE, {
+  x: 4.87 + 0.86,
+  y: 4.62,
+  w: 0.04,
+  h: 0.35,
+  fill: { color: COLORS.purpleAccent },
+  line: { color: COLORS.purpleAccent },
+});
+
+// Sub-Modal Architecture Box
+s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 2.2,
+  y: 4.97,
+  w: 8.93,
+  h: 1.45,
+  fill: { color: COLORS.codeBg },
+  line: { color: COLORS.purpleAccent, width: 1.4 },
+});
+
+s3.addText("🔍 SUB-COMPONENT // INTERACTIVE CASE STUDY MODAL (Smart Village Simulation)", {
+  x: 2.4,
+  y: 5.08,
+  w: 8.53,
+  h: 0.28,
+  fontSize: 10,
+  fontFace: "Segoe UI",
+  color: COLORS.cyanAccent,
+  bold: true,
+});
+
+// 3 Simulation Mode Blocks
+const modes = [
+  {
+    name: "☀️ 1. Daytime Riverside Mode",
+    desc: "Sunny village river scene with moving sailboat, windmill rotation, and clear sky.",
+    x: 2.4,
+  },
+  {
+    name: "🌙 2. Night & Solar Lamp Mode",
+    desc: "Crescent moon, 36 sparkling stars, and solar streetlamp lighting cones.",
+    x: 5.38,
+  },
+  {
+    name: "🌧️ 3. Night Rain Mode (Canvas)",
+    desc: "190 falling raindrops + real-time water ripple physics in the river at 60 FPS.",
+    x: 8.36,
+  },
+];
+
+modes.forEach((m) => {
+  s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+    x: m.x,
+    y: 5.42,
+    w: 2.76,
+    h: 0.9,
+    fill: { color: COLORS.cardBg },
+    line: { color: COLORS.cardBorder, width: 1 },
+  });
+
+  s3.addText(m.name, {
+    x: m.x + 0.1,
+    y: 5.48,
+    w: 2.56,
+    h: 0.24,
+    fontSize: 9,
+    fontFace: "Segoe UI",
+    bold: true,
+    color: COLORS.textLight,
+  });
+
+  s3.addText(m.desc, {
+    x: m.x + 0.1,
+    y: 5.74,
+    w: 2.56,
+    h: 0.52,
+    fontSize: 8,
+    fontFace: "Segoe UI",
+    color: COLORS.textMuted,
+    lineSpacing: 11,
+  });
+});
+
+// Bottom Summary Footnote
+s3.addText("Sitemap Goal: Single-page performance, zero reload delay, semantic HTML5 structure, and browser-accessible C++ OpenGL simulation.", {
+  x: 0.85,
+  y: 6.55,
+  w: 11.6,
+  h: 0.25,
+  fontSize: 8.5,
+  fontFace: "Segoe UI",
+  color: COLORS.textMuted,
+  align: "center",
+});
 
 // ==========================================
 // SLIDE 4: HTML & Technologies Used
@@ -422,32 +654,151 @@ s6.addText(
 );
 
 // ==========================================
-// SLIDE 7: Output & Live Demo
+// SLIDE 7: Output & Live Demo (With Actual Screenshots)
 // ==========================================
-const s7 = createBaseSlide("06 // Output & Demo", "Visual Output & My 45-Second Live Demo Plan", "07");
+const s7 = createBaseSlide("06 // Output & Demo", "Visual Output & Actual Website Screenshots", "07");
 
-// Left Box
-s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s7.addText("🖥️ Visual Output Deliverables", { x: 1.05, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
-s7.addText(
-  "• Full Desktop View: Dark theme with blue neon glows and clean card layouts.\n\n" +
-  "• Mobile Phone View: Adaptive mobile menu drawer and stacked readable cards.\n\n" +
-  "• Case Study Popup: Interactive Day, Night, and Rain simulation modes.\n\n" +
-  "• GitHub Code Link: Connects directly to my branch on GitHub so teachers can review my code.",
-  { x: 1.05, y: 2.2, w: 5.15, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 20 }
-);
+// Left Window Card: Desktop Homepage View
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 0.8,
+  y: 1.55,
+  w: 6.35,
+  h: 4.9,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.cardBorder, width: 1 },
+});
 
-// Right Box: Demo plan
-s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 6.88, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cyanAccent } });
-s7.addText("⏱️ My 45-Second Live Demo Plan", { x: 7.13, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.cyanAccent });
+// Browser Titlebar Mockup
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 0.8,
+  y: 1.55,
+  w: 6.35,
+  h: 0.35,
+  fill: { color: COLORS.codeBg },
+  line: { color: COLORS.cardBorder, width: 1 },
+});
+
+s7.addShape(pptx.shapes.OVAL, { x: 0.95, y: 1.67, w: 0.1, h: 0.1, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 1.12, y: 1.67, w: 0.1, h: 0.1, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 1.29, y: 1.67, w: 0.1, h: 0.1, fill: { color: "10B981" } });
+
+s7.addText("localhost:3000 • Desktop Homepage (Hero, Bio & Skills)", {
+  x: 1.5,
+  y: 1.6,
+  w: 5.5,
+  h: 0.24,
+  fontSize: 8.5,
+  fontFace: "Consolas",
+  color: COLORS.textMuted,
+});
+
+// Desktop Screenshot Image
+const heroShotPath = path.join(__dirname, "public", "screenshots", "website-desktop-hero.png");
+if (fs.existsSync(heroShotPath)) {
+  s7.addImage({
+    path: heroShotPath,
+    x: 0.85,
+    y: 1.95,
+    w: 6.25,
+    h: 3.9,
+  });
+}
+
+s7.addText("Actual Desktop View: Hero, About Me, Navigation & Skills Card", {
+  x: 0.85,
+  y: 6.0,
+  w: 6.25,
+  h: 0.35,
+  fontSize: 9,
+  fontFace: "Segoe UI",
+  color: COLORS.cyanAccent,
+  bold: true,
+  align: "center",
+});
+
+// Right Window Card: Simulation Modal View
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 7.35,
+  y: 1.55,
+  w: 5.18,
+  h: 3.15,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.blueAccent, width: 1.2 },
+});
+
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 7.35,
+  y: 1.55,
+  w: 5.18,
+  h: 0.32,
+  fill: { color: COLORS.codeBg },
+  line: { color: COLORS.blueAccent, width: 1 },
+});
+
+s7.addShape(pptx.shapes.OVAL, { x: 7.5, y: 1.66, w: 0.09, h: 0.09, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 7.65, y: 1.66, w: 0.09, h: 0.09, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 7.8, y: 1.66, w: 0.09, h: 0.09, fill: { color: "10B981" } });
+
+s7.addText("Smart Village Interactive Simulation Modal", {
+  x: 7.98,
+  y: 1.6,
+  w: 4.4,
+  h: 0.22,
+  fontSize: 8,
+  fontFace: "Consolas",
+  color: COLORS.textLight,
+  bold: true,
+});
+
+// Modal Screenshot Image
+const modalShotPath = path.join(__dirname, "public", "screenshots", "website-simulation-modal.png");
+if (fs.existsSync(modalShotPath)) {
+  s7.addImage({
+    path: modalShotPath,
+    x: 7.4,
+    y: 1.9,
+    w: 5.08,
+    h: 2.72,
+  });
+}
+
+// Right Bottom: Live Demo Plan Card
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 7.35,
+  y: 4.82,
+  w: 5.18,
+  h: 1.63,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.cyanAccent, width: 1.2 },
+});
+
+s7.addText("⏱️ 45-Second Live Browser Demo Steps", {
+  x: 7.55,
+  y: 4.92,
+  w: 4.78,
+  h: 0.28,
+  fontSize: 10.5,
+  fontFace: "Segoe UI",
+  bold: true,
+  color: COLORS.cyanAccent,
+});
+
 s7.addText(
-  "Step 1: Open website in Google Chrome (localhost:3000 / 3001).\n\n" +
-  "Step 2: Scroll to Skills section to show the animated progress bars.\n\n" +
-  "Step 3: Click 'View Case Study' button on Smart Village project.\n\n" +
-  "Step 4: Click 'Night & Solar Lamps' to show moon and streetlamp lights.\n\n" +
-  "Step 5: Click 'Night Rain Mode' to show falling rain and water ripples.\n\n" +
-  "Step 6: Resize browser window to show that it adapts smoothly to mobile view.",
-  { x: 7.13, y: 2.2, w: 5.15, h: 3.8, fontSize: 11, color: COLORS.textLight, lineSpacing: 17 }
+  "1. Open Chrome browser (http://localhost:3000/ or :3001/)\n" +
+  "2. Scroll to Skills to show the 4 animated percentage bars\n" +
+  "3. Click 'View Case Study' on the Smart Village project\n" +
+  "4. Toggle Night Mode (Moon & Lamps) and Rain Mode (Canvas Ripples)\n" +
+  "5. Resize the window to demonstrate mobile responsiveness",
+  {
+    x: 7.55,
+    y: 5.25,
+    w: 4.78,
+    h: 1.15,
+    fontSize: 9,
+    fontFace: "Segoe UI",
+    color: COLORS.textLight,
+    lineSpacing: 14,
+  }
 );
 
 // ==========================================
@@ -548,33 +899,59 @@ s10.addText("Q&A Session • Open for Questions", {
   align: "center",
 });
 
-// Save to Workspace and Desktop
+// Save to Workspace and Desktop safely
+const baseTempWorkspace = path.join(__dirname, "Portfolio_Presentation_Sultana_New.pptx");
 const primaryWorkspace = path.join(__dirname, "Portfolio_Presentation_Sultana.pptx");
 const primaryDesktop = "C:\\Users\\USER\\Desktop\\Portfolio_Presentation_Sultana.pptx";
+const updatedDesktop = "C:\\Users\\USER\\Desktop\\Portfolio_Presentation_Sultana_Updated.pptx";
 const legacyWorkspace = path.join(__dirname, "My_Portfolio_Presentation_Sultana.pptx");
 const legacyDesktop = "C:\\Users\\USER\\Desktop\\My_Portfolio_Presentation_Sultana.pptx";
 
-pptx.writeFile({ fileName: primaryWorkspace }).then((fileName) => {
-  console.log(`Saved primary in workspace: ${fileName}`);
+pptx.writeFile({ fileName: baseTempWorkspace }).then(() => {
+  console.log(`Generated presentation successfully.`);
+
+  // 1. Always copy to Updated Desktop file (never locked)
   try {
-    fs.copyFileSync(primaryWorkspace, primaryDesktop);
-    console.log(`Saved primary on Desktop: ${primaryDesktop}`);
+    fs.copyFileSync(baseTempWorkspace, updatedDesktop);
+    console.log(`Saved updated copy on Desktop: ${updatedDesktop}`);
   } catch (err) {
-    console.error("Desktop copy note:", err.message);
+    console.error("Updated desktop copy note:", err.message);
   }
 
-  // Also try copying to legacy file names if not locked
+  // 2. Try copying to primary workspace and desktop
   try {
-    fs.copyFileSync(primaryWorkspace, legacyWorkspace);
+    fs.copyFileSync(baseTempWorkspace, primaryWorkspace);
+    console.log(`Updated primary in workspace: ${primaryWorkspace}`);
+  } catch (err) {
+    console.log("Workspace primary file is locked by open program.");
+  }
+
+  try {
+    fs.copyFileSync(baseTempWorkspace, primaryDesktop);
+    console.log(`Updated primary on Desktop: ${primaryDesktop}`);
+  } catch (err) {
+    console.log("Desktop primary file is currently open in PowerPoint.");
+  }
+
+  // 3. Try copying to legacy names
+  try {
+    fs.copyFileSync(baseTempWorkspace, legacyWorkspace);
     console.log(`Updated legacy in workspace: ${legacyWorkspace}`);
   } catch (err) {
-    console.log("Note: legacy workspace file is currently open/locked in another program.");
+    console.log("Workspace legacy file is locked.");
   }
 
   try {
-    fs.copyFileSync(primaryWorkspace, legacyDesktop);
+    fs.copyFileSync(baseTempWorkspace, legacyDesktop);
     console.log(`Updated legacy on Desktop: ${legacyDesktop}`);
   } catch (err) {
-    console.log("Note: legacy desktop file is currently open/locked in PowerPoint.");
+    console.log("Desktop legacy file is locked.");
   }
+
+  // Clean up temp file
+  try {
+    if (fs.existsSync(primaryWorkspace)) {
+      fs.unlinkSync(baseTempWorkspace);
+    }
+  } catch (e) {}
 });
