@@ -40,18 +40,6 @@ const server = http.createServer((req, res) => {
           </script>
         `;
         html = html.replace('</body>', `${modalInjection}</body>`);
-      } else if (query && query.includes('view=projects')) {
-        const scrollInjection = `
-          <script>
-            window.addEventListener('load', () => {
-              setTimeout(() => {
-                const el = document.getElementById('projects');
-                if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' });
-              }, 1000);
-            });
-          </script>
-        `;
-        html = html.replace('</body>', `${scrollInjection}</body>`);
       }
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(html);
@@ -76,9 +64,8 @@ server.listen(PORT, '127.0.0.1', () => {
   }
 
   const shotHero = path.join(screenshotsDir, 'website-desktop-hero.png');
-  const shotProjects = path.join(screenshotsDir, 'website-projects-section.png');
+  const shotTall = path.join(screenshotsDir, 'website-skills-section.png');
   const shotModal = path.join(screenshotsDir, 'website-simulation-modal.png');
-  const shotMobile = path.join(screenshotsDir, 'website-mobile.png');
 
   function runShot(args, cb) {
     execFile(chromePath, args, (err) => {
@@ -87,40 +74,31 @@ server.listen(PORT, '127.0.0.1', () => {
     });
   }
 
-  // 1. Desktop Hero
+  // 1. Desktop Hero (Homepage output)
   runShot([
     '--headless=new', '--disable-gpu', '--hide-scrollbars',
-    '--virtual-time-budget=4000', '--window-size=1280,720',
+    '--virtual-time-budget=5000', '--window-size=1280,720',
     `--screenshot=${shotHero}`, `http://127.0.0.1:${PORT}/`
   ], () => {
     console.log('1. Hero shot captured');
 
-    // 2. Projects Section
+    // 2. Tall Screenshot covering Skills & About section
     runShot([
       '--headless=new', '--disable-gpu', '--hide-scrollbars',
-      '--virtual-time-budget=4000', '--window-size=1280,720',
-      `--screenshot=${shotProjects}`, `http://127.0.0.1:${PORT}/?view=projects`
+      '--virtual-time-budget=5000', '--window-size=1280,1800',
+      `--screenshot=${shotTall}`, `http://127.0.0.1:${PORT}/`
     ], () => {
-      console.log('2. Projects shot captured');
+      console.log('2. Tall (Skills) shot captured');
 
-      // 3. Simulation Modal Open
+      // 3. Simulation Modal Output
       runShot([
         '--headless=new', '--disable-gpu', '--hide-scrollbars',
-        '--virtual-time-budget=5000', '--window-size=1280,720',
+        '--virtual-time-budget=6000', '--window-size=1280,720',
         `--screenshot=${shotModal}`, `http://127.0.0.1:${PORT}/?view=modal`
       ], () => {
         console.log('3. Simulation Modal shot captured');
-
-        // 4. Mobile View
-        runShot([
-          '--headless=new', '--disable-gpu', '--hide-scrollbars',
-          '--virtual-time-budget=4000', '--window-size=390,844',
-          `--screenshot=${shotMobile}`, `http://127.0.0.1:${PORT}/`
-        ], () => {
-          console.log('4. Mobile shot captured');
-          server.close(() => {
-            console.log('All screenshots captured and saved in:', screenshotsDir);
-          });
+        server.close(() => {
+          console.log('All screenshots ready!');
         });
       });
     });

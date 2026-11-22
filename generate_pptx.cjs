@@ -129,7 +129,7 @@ s1.addText("DAFFODIL INTERNATIONAL UNIVERSITY • DEPT. OF CSE", {
   bold: true,
 });
 
-s1.addText("My Portfolio Website:\nDesign, Development & What I Learned", {
+s1.addText("My Portfolio Website:\nDesign, Implementation & Learning", {
   x: 1.1,
   y: 1.35,
   w: 11.0,
@@ -140,7 +140,7 @@ s1.addText("My Portfolio Website:\nDesign, Development & What I Learned", {
   bold: true,
 });
 
-s1.addText("A modern, interactive personal website to showcase my coding skills and coursework.", {
+s1.addText("A modern, interactive personal developer website showcasing engineering coursework and skills.", {
   x: 1.1,
   y: 2.85,
   w: 11.0,
@@ -245,9 +245,9 @@ const s2 = createBaseSlide("01 // Introduction", "Project Overview & Why I Built
 s2.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
 s2.addText("🌐 What Is This Website?", { x: 1.0, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
 s2.addText(
-  "• My personal developer website built from scratch.\n\n" +
-  "• Built using clean HTML, modern CSS, JavaScript, and React.\n\n" +
-  "• Shows my university projects with real interactive demos instead of just reading text.",
+  "• Personal Front-End Portfolio: Built from scratch to showcase real engineering coursework.\n\n" +
+  "• Technology Core: Engineered with Semantic HTML5, modern CSS variables, JavaScript, and React 19.\n\n" +
+  "• Interactive Experience: Features live browser simulations instead of static resume text.",
   { x: 1.0, y: 2.2, w: 3.25, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 19 }
 );
 
@@ -255,19 +255,19 @@ s2.addText(
 s2.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 4.84, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
 s2.addText("🎯 Who Is It For?", { x: 5.04, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
 s2.addText(
-  "• Job Recruiters: Can quickly check my practical coding skills and clean design taste.\n\n" +
-  "• University Teachers: Can test my real project work and verify my code.\n\n" +
-  "• Classmates & Peers: To collaborate and learn from each other.",
+  "• Job Recruiters: Can evaluate practical coding ability, clean code architecture, and UI/UX design sense.\n\n" +
+  "• University Teachers: Can test live coursework deliverables and verify implementation standards.\n\n" +
+  "• Peers & Collaborators: Open-source project review and collaborative development.",
   { x: 5.04, y: 2.2, w: 3.25, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 19 }
 );
 
 // Card 3
 s2.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 8.88, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s2.addText("🚀 My Main Goals", { x: 9.08, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
+s2.addText("🚀 Primary Objectives", { x: 9.08, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
 s2.addText(
-  "• Build a live digital profile instead of an old-fashioned paper or PDF resume.\n\n" +
-  "• Solve a real problem: Show our desktop C++ OpenGL simulation directly in the browser.\n\n" +
-  "• Make the website look great on mobile phones, tablets, and computers.",
+  "• Digital Identity: Replace traditional paper/PDF resumes with an authentic, verified live presence.\n\n" +
+  "• Solve Coursework Barrier: Bring desktop C++ OpenGL graphics simulations directly into the browser.\n\n" +
+  "• Full Responsiveness: Achieve 100% usability across mobile phones, tablets, and desktop monitors.",
   { x: 9.08, y: 2.2, w: 3.25, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 19 }
 );
 
@@ -298,7 +298,7 @@ s3.addText("🌐 SINGLE PAGE APPLICATION (SPA) ROOT", {
   align: "center",
 });
 
-s3.addText("Sticky Header Navigation • Smooth Client-Side Section Scrolling", {
+s3.addText("Single entry (index.html) • Sticky Header Bar • Client-Side Smooth Scrolling", {
   x: 3.66,
   y: 1.9,
   w: 6.0,
@@ -329,43 +329,43 @@ s3.addShape(pptx.shapes.RECTANGLE, {
   line: { color: COLORS.cyanAccent },
 });
 
-// 6 Section Cards
+// 6 Main Page Section Cards
 const sitemapSections = [
   {
     title: "01. About Me",
     anchor: "#about",
     color: COLORS.blueAccent,
-    points: "• Short Bio\n• Quick Metrics\n• DIU Identity\n• Profile Image",
+    points: "• Short Bio\n• Academic Journey\n• Quick Highlights\n• Profile Image",
   },
   {
     title: "02. Skills",
     anchor: "#skills",
     color: COLORS.cyanAccent,
-    points: "• C Coding (40%)\n• HTML/CSS (40%)\n• SQL (65%)\n• Toolchain",
+    points: "• C Coding (40%)\n• HTML (40%)\n• SQL (65%)\n• CSS & JS (35%)",
   },
   {
     title: "03. Projects",
     anchor: "#projects",
     color: COLORS.purpleAccent,
-    points: "• Smart Village\n• C++ OpenGL\n• Feature Tags\n• [Sub-Modal ⮯]",
+    points: "• Smart Village\n• C++ OpenGL\n• Tech Stack Tags\n• [Sub-Modal ⮯]",
   },
   {
     title: "04. Education",
     anchor: "#education",
     color: COLORS.blueAccent,
-    points: "• DIU B.Sc (CSE)\n• HSC (GPA 5.00)\n• SSC (GPA 4.94)\n• Achievements",
+    points: "• DIU B.Sc in CSE\n• HSC (GPA 5.00)\n• SSC (GPA 4.94)\n• Academic Timeline",
   },
   {
     title: "05. Services",
     anchor: "#services",
     color: COLORS.cyanAccent,
-    points: "• Webpage Design\n• C Programming\n• SQL Queries\n• Fast Delivery",
+    points: "• Webpage Design\n• C Coding Logic\n• SQL Database\n• Clean Delivery",
   },
   {
     title: "06. Contact",
     anchor: "#contact",
     color: COLORS.blueAccent,
-    points: "• Message Form\n• Honeypot Bot Trap\n• Direct Email\n• Social Icons",
+    points: "• Message Form\n• Honeypot Bot Trap\n• Direct Email\n• Social Links",
   },
 ];
 
@@ -440,7 +440,7 @@ s3.addShape(pptx.shapes.RECTANGLE, {
   line: { color: COLORS.purpleAccent },
 });
 
-// Sub-Modal Architecture Box
+// Sub-Modal Architecture Box (Distinct from main scrollable sections)
 s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
   x: 2.2,
   y: 4.97,
@@ -450,7 +450,7 @@ s3.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
   line: { color: COLORS.purpleAccent, width: 1.4 },
 });
 
-s3.addText("🔍 SUB-COMPONENT // INTERACTIVE CASE STUDY MODAL (Smart Village Simulation)", {
+s3.addText("🔍 SUB-FEATURE // INTERACTIVE CASE STUDY MODAL (Smart Village C++ Simulation)", {
   x: 2.4,
   y: 5.08,
   w: 8.53,
@@ -461,21 +461,21 @@ s3.addText("🔍 SUB-COMPONENT // INTERACTIVE CASE STUDY MODAL (Smart Village Si
   bold: true,
 });
 
-// 3 Simulation Mode Blocks
+// 3 Simulation Mode Blocks (Clean, no redundant technical numbers)
 const modes = [
   {
-    name: "☀️ 1. Daytime Riverside Mode",
-    desc: "Sunny village river scene with moving sailboat, windmill rotation, and clear sky.",
+    name: "☀️ 1. Daytime Mode",
+    desc: "Sunny village river scene with moving sailboat and rotating windmill animation.",
     x: 2.4,
   },
   {
     name: "🌙 2. Night & Solar Lamp Mode",
-    desc: "Crescent moon, 36 sparkling stars, and solar streetlamp lighting cones.",
+    desc: "Moonlit night sky with stars and glowing solar streetlamp illumination cones.",
     x: 5.38,
   },
   {
-    name: "🌧️ 3. Night Rain Mode (Canvas)",
-    desc: "190 falling raindrops + real-time water ripple physics in the river at 60 FPS.",
+    name: "🌧️ 3. Rain Mode (Canvas)",
+    desc: "Animated falling raindrops with real-time river ripples using HTML5 Canvas.",
     x: 8.36,
   },
 ];
@@ -514,7 +514,7 @@ modes.forEach((m) => {
 });
 
 // Bottom Summary Footnote
-s3.addText("Sitemap Goal: Single-page performance, zero reload delay, semantic HTML5 structure, and browser-accessible C++ OpenGL simulation.", {
+s3.addText("Architecture Distinction: 6 single-page scrollable sections (#) + 1 interactive dialog sub-modal launched from Projects.", {
   x: 0.85,
   y: 6.55,
   w: 11.6,
@@ -528,89 +528,90 @@ s3.addText("Sitemap Goal: Single-page performance, zero reload delay, semantic H
 // ==========================================
 // SLIDE 4: HTML & Technologies Used
 // ==========================================
-const s4 = createBaseSlide("03 // Technologies", "Main Tools & HTML Tags I Used", "04");
+const s4 = createBaseSlide("03 // Technologies", "Main Tools & Technologies Used in the Project", "04");
 
-// Card 1
+// Card 1: Semantic HTML5
 s4.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s4.addText("🏷️ HTML5 Semantic Tags", { x: 1.0, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
+s4.addText("🏷️ Semantic HTML5 Elements", { x: 1.0, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
 s4.addText(
-  "• <header> & <nav>: Used for top menu bar.\n\n" +
-  "• <section> & <article>: Used to organize page content cleanly.\n\n" +
-  "• <canvas>: Used to draw real-time falling rain and water ripples.\n\n" +
-  "• <form> & <input>: Used for user messages.\n\n" +
-  "Why? Semantic tags make the code clean, easy to read, and friendly for Google search (SEO).",
+  "• <header> & <nav>: Used for the sticky top navigation bar.\n\n" +
+  "• <section> & <article>: Provides clean semantic page hierarchy and structure.\n\n" +
+  "• <canvas>: Used for procedural 2D rendering of rain and river ripples.\n\n" +
+  "• <form> & <input>: Structured contact message form with ARIA accessibility roles.\n\n" +
+  "Why? Semantic markup ensures accessibility (a11y), clean code organization, and search-friendly SEO.",
   { x: 1.0, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 16 }
 );
 
-// Card 2
+// Card 2: Modern CSS
 s4.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 4.84, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s4.addText("🎨 Modern CSS Styling", { x: 5.04, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
+s4.addText("🎨 Modern CSS3 Styling", { x: 5.04, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
 s4.addText(
-  "• CSS Variables: Defined colors like --bg-surface and blue neon glow in one place.\n\n" +
-  "• Flexbox & Grid: Used to position cards nicely on the screen.\n\n" +
-  "• CSS clamp(): Keeps text readable on both small mobile phones and large laptops.\n\n" +
-  "• Glass Blur: Added blurred transparent background for a modern look.",
+  "• CSS Variables: Centralized color palette (--bg-surface, --accent-blue) enabling instant theme switching.\n\n" +
+  "• Flexbox & CSS Grid: Creates fluid multi-column card layouts and aligned components.\n\n" +
+  "• CSS clamp(): Fluid typography scaling smoothly across small mobile phones to large monitors.\n\n" +
+  "• Layered Glass Blur: Uses backdrop-filter blur for modern dark-themed contrast.",
   { x: 5.04, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 16 }
 );
 
-// Card 3
+// Card 3: JavaScript, React & Vite
 s4.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 8.88, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s4.addText("⚡ JavaScript & React", { x: 9.08, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
+s4.addText("⚡ JavaScript, React 19 & Tooling", { x: 9.08, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
 s4.addText(
-  "• React Components: Code is broken into small reusable building blocks.\n\n" +
-  "• React Hooks: Used useState to switch Day/Night modes and dark/light themes.\n\n" +
-  "• Vite: Fast build tool that reloads instantly when editing code.\n\n" +
-  "• Lucide Icons: Crisp SVG icons that never look blurry.",
+  "• React 19 Components: Code is modularized into reusable UI components.\n\n" +
+  "• React Hooks: useState handles Day/Night/Rain modes and theme states; useEffect manages events.\n\n" +
+  "• Vite Bundler: Lightning-fast hot module replacement (HMR) and optimized production build.\n\n" +
+  "• Lucide React Icons: Clean, resolution-independent SVG vector iconography.",
   { x: 9.08, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 16 }
 );
 
 // ==========================================
 // SLIDE 5: Key Features
 // ==========================================
-const s5 = createBaseSlide("04 // Key Features", "Main Features of My Portfolio Website", "05");
+const s5 = createBaseSlide("04 // Key Features", "Core Features & Interactive Capabilities", "05");
 
-// Left Card
+// Left Card: Simulation Feature
 s5.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
 s5.addText("🌧️ Interactive Project Simulation Popup", { x: 1.05, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.cyanAccent });
 s5.addText(
-  "• Solves the C++ Graphics Problem: Our OpenGL project runs as a desktop .exe file. I built an interactive web popup so visitors can test it directly in the browser.\n\n" +
+  "• Solves the C++ Graphics Barrier: Our OpenGL coursework runs natively on desktop as an .exe file. I built an in-browser interactive modal so evaluators can test the visual concepts live.\n\n" +
   "• 3 Live Atmosphere Modes:\n" +
-  "   1. Daytime: Sunny village riverside with moving sailboat and windmill.\n" +
-  "   2. Night & Solar Lamps: Glowing crescent moon, 36 stars, and solar lamp light cones.\n" +
-  "   3. Night Rain: Dark rainy sky with animated falling rain and lightning.\n\n" +
-  "• Canvas Rain Physics: 190 raindrops falling smoothly and creating real water ripples in the river.",
+  "   1. Daytime Mode: Sunny village riverside with an animated sailboat and windmill.\n" +
+  "   2. Night & Solar Lamps: Moonlit scenery with glowing solar streetlamp light cones.\n" +
+  "   3. Rain Mode: Procedural falling raindrops colliding with the river to produce real-time ripples.\n\n" +
+  "• Pure Browser Canvas: Runs procedurally without heavy external video assets or plugins.",
   { x: 1.05, y: 2.2, w: 5.15, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 16 }
 );
 
-// Right Card
+// Right Card: UX & Security Features
 s5.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 6.88, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
 s5.addText("🛡️ User Experience & Security Features", { x: 7.13, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.blueAccent });
 s5.addText(
-  "• Dark & Light Theme Switcher: Visitors can switch theme with one click.\n\n" +
-  "• Visual Skills Progress: Shows clear percentage bars for C (40%), HTML (40%), SQL (65%), and CSS/JS.\n\n" +
-  "• Spam Bot Protection (Honeypot): Blocks internet spam bots automatically without annoying users with CAPTCHAs.\n\n" +
-  "• Copy Email Button: One click copies my email with instant feedback.\n\n" +
-  "• Works on All Devices: 100% responsive on Mobile Phones, Tablets, and PCs.",
+  "• Dark & Light Theme Switcher: Visitors can toggle between dark and light themes with one click.\n\n" +
+  "• Verified Academic Skills Metrics: Clear percentage bars showing real coursework progress:\n" +
+  "   - C Programming (40%) | HTML (40%)\n" +
+  "   - SQL / MySQL (65%)   | CSS & JavaScript (35%)\n\n" +
+  "• Invisible Honeypot Security: Traps automated spam bots silently without annoying users with CAPTCHAs.\n\n" +
+  "• 100% Responsive Architecture: Adaptive layout for mobile phones, tablets, and desktops.",
   { x: 7.13, y: 2.2, w: 5.15, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 16 }
 );
 
 // ==========================================
 // SLIDE 6: Code Explanation
 // ==========================================
-const s6 = createBaseSlide("05 // Code Explanation", "Two Important Code Snippets & Why I Used Them", "06");
+const s6 = createBaseSlide("05 // Code Explanation", "Two Important Code Snippets & Technical Justification", "06");
 
-// Snippet 1
+// Snippet 1: Canvas Rain Physics
 s6.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s6.addText("SNIPPET 1: CANVAS RAIN & WATER RIPPLES", { x: 1.05, y: 1.75, w: 5.15, h: 0.3, fontSize: 11, bold: true, color: COLORS.cyanAccent });
+s6.addText("SNIPPET 1: CANVAS PROCEDURAL RAIN & RIPPLES", { x: 1.05, y: 1.75, w: 5.15, h: 0.3, fontSize: 11, bold: true, color: COLORS.cyanAccent });
 
 s6.addShape(pptx.shapes.RECTANGLE, { x: 1.05, y: 2.1, w: 5.15, h: 2.2, fill: { color: COLORS.codeBg }, line: { color: COLORS.cardBorder } });
 s6.addText(
-  "// 1. Move raindrops down with wind drift\n" +
+  "// 1. Move raindrops down with natural wind drift\n" +
   "d.y += d.speed;\n" +
   "d.x += d.wind;\n\n" +
-  "// 2. If raindrop hits the river, make a ripple\n" +
+  "// 2. River surface collision: generate water ripple\n" +
   "if (d.y > height * 0.67 && Math.random() < 0.18) {\n" +
-  "  addRipple(d.x, d.y); // Creates water circle\n" +
+  "  addRipple(d.x, d.y); // Creates expanding water ring\n" +
   "}\n" +
   "if (d.y > height + 20) {\n" +
   "  d.y = -d.length; d.x = Math.random() * width;\n" +
@@ -619,130 +620,167 @@ s6.addText(
 );
 
 s6.addText(
-  "Why I used this code:\n" +
-  "• An 80MB video file would make the website slow to load.\n" +
-  "• This lightweight code runs smoothly at 60 FPS directly in the browser.\n" +
-  "• Brings our desktop C++ OpenGL rain feature to life on the web.",
+  "Technical Justification:\n" +
+  "• Procedural 2D Canvas rendering animates dynamic rain and water ripples in real-time within the browser DOM.\n" +
+  "• Eliminates the need for heavy external media files or video assets.\n" +
+  "• Authentically recreates our desktop C++ OpenGL simulation directly on the web.",
   { x: 1.05, y: 4.5, w: 5.15, h: 1.6, fontSize: 10, color: COLORS.textMuted, lineSpacing: 15 }
 );
 
-// Snippet 2
+// Snippet 2: Honeypot Bot Security
 s6.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 6.88, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s6.addText("SNIPPET 2: SPAM BOT PROTECTION (HONEYPOT)", { x: 7.13, y: 1.75, w: 5.15, h: 0.3, fontSize: 11, bold: true, color: COLORS.blueAccent });
+s6.addText("SNIPPET 2: INVISIBLE HONEYPOT SPAM PROTECTION", { x: 7.13, y: 1.75, w: 5.15, h: 0.3, fontSize: 11, bold: true, color: COLORS.blueAccent });
 
 s6.addShape(pptx.shapes.RECTANGLE, { x: 7.13, y: 2.1, w: 5.15, h: 2.2, fill: { color: COLORS.codeBg }, line: { color: COLORS.cardBorder } });
 s6.addText(
-  "// Form submit handler\n" +
-  "const handleSubmit = (e) => {\n" +
-  "  e.preventDefault();\n" +
-  "  if (!validateForm()) return;\n\n" +
-  "  // Bot check: hidden field is empty for humans\n" +
-  "  if (formData.website && formData.website.trim() !== '') {\n" +
-  "    setStatus('success');\n" +
-  "    return; // Silently blocks automated spam bot\n" +
-  "  }\n" +
-  "};",
-  { x: 7.23, y: 2.18, w: 4.95, h: 2.0, fontSize: 9.5, fontFace: "Consolas", color: COLORS.codeText }
+  "// Hidden input: invisible to real users, auto-filled by bots\n" +
+  "<div className=\"hidden\" aria-hidden=\"true\">\n" +
+  "  <input name=\"website\" tabIndex={-1} autoComplete=\"off\"\n" +
+  "    value={formData.website} onChange={handleChange} />\n" +
+  "</div>\n\n" +
+  "// Honeypot check in handleSubmit:\n" +
+  "if (formData.website && formData.website.trim() !== '') {\n" +
+  "  setStatus('success'); // Return dummy success\n" +
+  "  return; // Silently discard automated spam submission\n" +
+  "}",
+  { x: 7.23, y: 2.18, w: 4.95, h: 2.0, fontSize: 9.0, fontFace: "Consolas", color: COLORS.codeText }
 );
 
 s6.addText(
-  "Why I used this code:\n" +
-  "• Protects my email from automated spam bots on the internet.\n" +
-  "• Keeps the form friendly for human visitors without annoying puzzles or CAPTCHAs.\n" +
-  "• Checks email format and message length before submitting.",
+  "Technical Justification:\n" +
+  "• An invisible input field hidden from human view (aria-hidden=\"true\", tabIndex={-1}).\n" +
+  "• Automated spam bots scrape the DOM and indiscriminately fill every field.\n" +
+  "• If populated on submit, the script silently drops the submission without sending spam, providing frictionless protection without annoying CAPTCHAs.",
   { x: 7.13, y: 4.5, w: 5.15, h: 1.6, fontSize: 10, color: COLORS.textMuted, lineSpacing: 15 }
 );
 
 // ==========================================
-// SLIDE 7: Output & Live Demo (With Actual Screenshots)
+// SLIDE 7: Output & Live Demo
 // ==========================================
-const s7 = createBaseSlide("06 // Output & Demo", "Visual Output & Actual Website Screenshots", "07");
+const s7 = createBaseSlide("06 // Output & Demo", "Visual Output & Live Demo Plan", "07");
 
-// Left Window Card: Desktop Homepage View
+// Left: Desktop Homepage Screenshot Mockup
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
   x: 0.8,
   y: 1.55,
-  w: 6.35,
-  h: 4.9,
+  w: 5.65,
+  h: 3.4,
   fill: { color: COLORS.cardBg },
   line: { color: COLORS.cardBorder, width: 1 },
 });
 
-// Browser Titlebar Mockup
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
   x: 0.8,
   y: 1.55,
-  w: 6.35,
-  h: 0.35,
+  w: 5.65,
+  h: 0.32,
   fill: { color: COLORS.codeBg },
   line: { color: COLORS.cardBorder, width: 1 },
 });
 
-s7.addShape(pptx.shapes.OVAL, { x: 0.95, y: 1.67, w: 0.1, h: 0.1, fill: { color: "EF4444" } });
-s7.addShape(pptx.shapes.OVAL, { x: 1.12, y: 1.67, w: 0.1, h: 0.1, fill: { color: "F59E0B" } });
-s7.addShape(pptx.shapes.OVAL, { x: 1.29, y: 1.67, w: 0.1, h: 0.1, fill: { color: "10B981" } });
+s7.addShape(pptx.shapes.OVAL, { x: 0.95, y: 1.66, w: 0.09, h: 0.09, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 1.1, y: 1.66, w: 0.09, h: 0.09, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 1.25, y: 1.66, w: 0.09, h: 0.09, fill: { color: "10B981" } });
 
-s7.addText("localhost:3000 • Desktop Homepage (Hero, Bio & Skills)", {
-  x: 1.5,
+s7.addText("http://localhost:3000/ • Desktop Homepage", {
+  x: 1.45,
   y: 1.6,
-  w: 5.5,
-  h: 0.24,
+  w: 4.8,
+  h: 0.22,
   fontSize: 8.5,
   fontFace: "Consolas",
   color: COLORS.textMuted,
 });
 
-// Desktop Screenshot Image
 const heroShotPath = path.join(__dirname, "public", "screenshots", "website-desktop-hero.png");
 if (fs.existsSync(heroShotPath)) {
   s7.addImage({
     path: heroShotPath,
     x: 0.85,
-    y: 1.95,
-    w: 6.25,
-    h: 3.9,
+    y: 1.9,
+    w: 5.55,
+    h: 2.7,
   });
 }
 
-s7.addText("Actual Desktop View: Hero, About Me, Navigation & Skills Card", {
+s7.addText("Live Homepage: Navigation bar, hero bio, call-to-action buttons, and glowing photo card", {
   x: 0.85,
-  y: 6.0,
-  w: 6.25,
-  h: 0.35,
-  fontSize: 9,
+  y: 4.65,
+  w: 5.55,
+  h: 0.28,
+  fontSize: 8.5,
   fontFace: "Segoe UI",
   color: COLORS.cyanAccent,
   bold: true,
   align: "center",
 });
 
-// Right Window Card: Simulation Modal View
+// Left Bottom: Live Demo Quick Steps
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-  x: 7.35,
-  y: 1.55,
-  w: 5.18,
-  h: 3.15,
+  x: 0.8,
+  y: 5.05,
+  w: 5.65,
+  h: 1.45,
   fill: { color: COLORS.cardBg },
-  line: { color: COLORS.blueAccent, width: 1.2 },
+  line: { color: COLORS.cyanAccent, width: 1.2 },
+});
+
+s7.addText("⏱️ 45-Second Live Browser Demo Steps", {
+  x: 0.95,
+  y: 5.12,
+  w: 5.35,
+  h: 0.25,
+  fontSize: 10,
+  fontFace: "Segoe UI",
+  bold: true,
+  color: COLORS.cyanAccent,
+});
+
+s7.addText(
+  "1. Open Chrome browser at http://localhost:3000/ (or :3001/)\n" +
+  "2. Scroll down to Skills section to demonstrate animated percentage bars\n" +
+  "3. Click 'View Case Study' button on the Smart Village project\n" +
+  "4. Toggle Daytime, Night, and Rain simulation modes live\n" +
+  "5. Resize the browser window to showcase mobile responsiveness",
+  {
+    x: 0.95,
+    y: 5.38,
+    w: 5.35,
+    h: 1.05,
+    fontSize: 8.5,
+    fontFace: "Segoe UI",
+    color: COLORS.textLight,
+    lineSpacing: 13,
+  }
+);
+
+// Right Top: Interactive Simulation Modal Screenshot Mockup
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 6.88,
+  y: 1.55,
+  w: 5.65,
+  h: 2.3,
+  fill: { color: COLORS.cardBg },
+  line: { color: COLORS.purpleAccent, width: 1.2 },
 });
 
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-  x: 7.35,
+  x: 6.88,
   y: 1.55,
-  w: 5.18,
-  h: 0.32,
+  w: 5.65,
+  h: 0.3,
   fill: { color: COLORS.codeBg },
-  line: { color: COLORS.blueAccent, width: 1 },
+  line: { color: COLORS.purpleAccent, width: 1 },
 });
 
-s7.addShape(pptx.shapes.OVAL, { x: 7.5, y: 1.66, w: 0.09, h: 0.09, fill: { color: "EF4444" } });
-s7.addShape(pptx.shapes.OVAL, { x: 7.65, y: 1.66, w: 0.09, h: 0.09, fill: { color: "F59E0B" } });
-s7.addShape(pptx.shapes.OVAL, { x: 7.8, y: 1.66, w: 0.09, h: 0.09, fill: { color: "10B981" } });
+s7.addShape(pptx.shapes.OVAL, { x: 7.02, y: 1.65, w: 0.08, h: 0.08, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 7.15, y: 1.65, w: 0.08, h: 0.08, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 7.28, y: 1.65, w: 0.08, h: 0.08, fill: { color: "10B981" } });
 
-s7.addText("Smart Village Interactive Simulation Modal", {
-  x: 7.98,
-  y: 1.6,
-  w: 4.4,
+s7.addText("Simulation Modal Output (Day / Night / Rain Modes)", {
+  x: 7.45,
+  y: 1.58,
+  w: 4.9,
   h: 0.22,
   fontSize: 8,
   fontFace: "Consolas",
@@ -750,145 +788,169 @@ s7.addText("Smart Village Interactive Simulation Modal", {
   bold: true,
 });
 
-// Modal Screenshot Image
 const modalShotPath = path.join(__dirname, "public", "screenshots", "website-simulation-modal.png");
 if (fs.existsSync(modalShotPath)) {
   s7.addImage({
     path: modalShotPath,
-    x: 7.4,
-    y: 1.9,
-    w: 5.08,
-    h: 2.72,
+    x: 6.93,
+    y: 1.88,
+    w: 5.55,
+    h: 1.9,
   });
 }
 
-// Right Bottom: Live Demo Plan Card
+// Right Bottom: Skills Section Output Mockup
 s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
-  x: 7.35,
-  y: 4.82,
-  w: 5.18,
-  h: 1.63,
+  x: 6.88,
+  y: 4.05,
+  w: 5.65,
+  h: 2.45,
   fill: { color: COLORS.cardBg },
-  line: { color: COLORS.cyanAccent, width: 1.2 },
+  line: { color: COLORS.blueAccent, width: 1.2 },
 });
 
-s7.addText("⏱️ 45-Second Live Browser Demo Steps", {
-  x: 7.55,
-  y: 4.92,
-  w: 4.78,
-  h: 0.28,
-  fontSize: 10.5,
-  fontFace: "Segoe UI",
+s7.addShape(pptx.shapes.ROUNDED_RECTANGLE, {
+  x: 6.88,
+  y: 4.05,
+  w: 5.65,
+  h: 0.3,
+  fill: { color: COLORS.codeBg },
+  line: { color: COLORS.blueAccent, width: 1 },
+});
+
+s7.addShape(pptx.shapes.OVAL, { x: 7.02, y: 4.15, w: 0.08, h: 0.08, fill: { color: "EF4444" } });
+s7.addShape(pptx.shapes.OVAL, { x: 7.15, y: 4.15, w: 0.08, h: 0.08, fill: { color: "F59E0B" } });
+s7.addShape(pptx.shapes.OVAL, { x: 7.28, y: 4.15, w: 0.08, h: 0.08, fill: { color: "10B981" } });
+
+s7.addText("Technical Skills Section Output (C, HTML, SQL, CSS/JS)", {
+  x: 7.45,
+  y: 4.08,
+  w: 4.9,
+  h: 0.22,
+  fontSize: 8,
+  fontFace: "Consolas",
+  color: COLORS.textLight,
   bold: true,
-  color: COLORS.cyanAccent,
 });
 
-s7.addText(
-  "1. Open Chrome browser (http://localhost:3000/ or :3001/)\n" +
-  "2. Scroll to Skills to show the 4 animated percentage bars\n" +
-  "3. Click 'View Case Study' on the Smart Village project\n" +
-  "4. Toggle Night Mode (Moon & Lamps) and Rain Mode (Canvas Ripples)\n" +
-  "5. Resize the window to demonstrate mobile responsiveness",
-  {
-    x: 7.55,
-    y: 5.25,
-    w: 4.78,
-    h: 1.15,
-    fontSize: 9,
-    fontFace: "Segoe UI",
-    color: COLORS.textLight,
-    lineSpacing: 14,
-  }
-);
+const skillsShotPath = path.join(__dirname, "public", "screenshots", "website-skills-section.png");
+if (fs.existsSync(skillsShotPath)) {
+  s7.addImage({
+    path: skillsShotPath,
+    x: 6.93,
+    y: 4.38,
+    w: 5.55,
+    h: 2.05,
+  });
+}
 
 // ==========================================
 // SLIDE 8: Challenges & Solutions
 // ==========================================
-const s8 = createBaseSlide("07 // Problem Solving", "Problems I Faced & How I Solved Them", "08");
+const s8 = createBaseSlide("07 // Problem Solving", "Real Challenges Faced & Engineering Solutions", "08");
 
-// Card 1
+// Challenge 1
 s8.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s8.addText("⚙️ 1. OpenGL Web Problem", { x: 1.0, y: 1.75, w: 3.25, h: 0.35, fontSize: 12.5, bold: true, color: COLORS.textLight });
+s8.addText("⚙️ 1. Desktop C++ OpenGL on Web", { x: 1.0, y: 1.75, w: 3.25, h: 0.35, fontSize: 12, bold: true, color: COLORS.textLight });
 s8.addText(
-  "The Problem:\n" +
-  "Our C++ OpenGL graphics project runs on desktop as an .exe file, so it cannot be viewed directly on the web.\n\n" +
-  "My Solution:\n" +
-  "I designed an interactive Case Study popup with an HTML5 Canvas simulation that recreates Day, Night, and Rain modes in the browser.",
+  "The Challenge:\n" +
+  "Our university graphics project was compiled as a native desktop C++ binary (.exe), making it impossible to run directly in web browsers.\n\n" +
+  "Engineering Solution:\n" +
+  "Designed an interactive Case Study modal powered by an HTML5 Canvas simulation that recreates the Daytime, Night, and Rain visual dynamics directly inside the browser.",
   { x: 1.0, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 17 }
 );
 
-// Card 2
+// Challenge 2
 s8.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 4.84, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s8.addText("🎨 2. Transparent Popup Bug", { x: 5.04, y: 1.75, w: 3.25, h: 0.35, fontSize: 12.5, bold: true, color: COLORS.textLight });
+s8.addText("🎨 2. Modal Backdrop Transparency", { x: 5.04, y: 1.75, w: 3.25, h: 0.35, fontSize: 12, bold: true, color: COLORS.textLight });
 s8.addText(
-  "The Problem:\n" +
-  "Initially, the popup background was transparent, so the page text behind it was overlapping and hard to read.\n\n" +
-  "My Solution:\n" +
-  "I added a 100% solid dark charcoal background (#0c101d) and a dark blur overlay so all popup text is clear and readable.",
+  "The Challenge:\n" +
+  "The case study modal initially used a semi-transparent glass backdrop, causing background page text to bleed through and severely hurt readability.\n\n" +
+  "Engineering Solution:\n" +
+  "Replaced the transparent background with a solid opaque charcoal slate surface (#0c101d) and a dark blur overlay (rgba(3, 7, 18, 0.85)) for 100% crisp text readability.",
   { x: 5.04, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 17 }
 );
 
-// Card 3
+// Challenge 3
 s8.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 8.88, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s8.addText("📱 3. Small Mobile Screen Fit", { x: 9.08, y: 1.75, w: 3.25, h: 0.35, fontSize: 12.5, bold: true, color: COLORS.textLight });
+s8.addText("📱 3. Small-Screen Viewport Fit", { x: 9.08, y: 1.75, w: 3.25, h: 0.35, fontSize: 12, bold: true, color: COLORS.textLight });
 s8.addText(
-  "The Problem:\n" +
-  "On small phones (320px–360px), buttons and text were getting squeezed and overflowing off the screen.\n\n" +
-  "My Solution:\n" +
-  "I used responsive flex-wrap and CSS clamp() so fonts and buttons resize smoothly on small mobile screens.",
+  "The Challenge:\n" +
+  "On narrow mobile screens (320px–375px), skill progress bars, modal buttons, and text cards suffered layout squeezing and horizontal overflow.\n\n" +
+  "Engineering Solution:\n" +
+  "Implemented responsive Flexbox wrapping, percentage-based grid columns, and CSS clamp() fluid typography to guarantee seamless multi-device scaling.",
   { x: 9.08, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 17 }
 );
 
 // ==========================================
 // SLIDE 9: Future Improvements
 // ==========================================
-const s9 = createBaseSlide("08 // Future Plans", "Future Improvements & Planned Features", "09");
+const s9 = createBaseSlide("08 // Future Plans", "Three Key Future Improvements", "09");
 
-// Left Box
-s9.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
-s9.addText("📦 Backend & Database Plans", { x: 1.05, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.cyanAccent });
+// Feature 1: Node.js Backend API
+s9.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
+s9.addText("⚙️ 1. Node.js Backend API", { x: 1.0, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.cyanAccent });
 s9.addText(
-  "• Node.js Backend API: Connect the contact form to a real backend to send messages directly to my email.\n\n" +
-  "• Database Storage: Save visitor inquiries in a PostgreSQL or MongoDB database.\n\n" +
-  "• Admin Dashboard: Add a login page where I can view and manage all messages.",
-  { x: 1.05, y: 2.2, w: 5.15, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 20 }
+  "• RESTful API Architecture:\n" +
+  "Build a dedicated backend service using Node.js and Express to process contact form submissions.\n\n" +
+  "• Automated Email Dispatch:\n" +
+  "Connect to an email service (e.g. Nodemailer or Resend) to forward visitor inquiries straight to my personal inbox.\n\n" +
+  "• Server-Side Security:\n" +
+  "Implement server-side input validation, sanitization, and IP rate-limiting to prevent automated denial-of-service abuse.",
+  { x: 1.0, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 18 }
 );
 
-// Right Box
-s9.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 6.88, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.blueAccent } });
-s9.addText("🚀 3D Graphics, App & Hosting", { x: 7.13, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.blueAccent });
+// Feature 2: Database Integration
+s9.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 4.84, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
+s9.addText("🗄️ 2. Database Integration", { x: 5.04, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.blueAccent });
 s9.addText(
-  "• 3D Web Graphics (Three.js): Add interactive 3D computer graphics models directly inside the browser.\n\n" +
-  "• Mobile App Feel (PWA): Add offline support so visitors can open the website even without internet.\n\n" +
-  "• Custom Domain: Publish the website online using Vercel or Netlify with my own domain name.",
-  { x: 7.13, y: 2.2, w: 5.15, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 20 }
+  "• Persistent Relational Storage:\n" +
+  "Integrate a relational database (PostgreSQL or MySQL) to reliably persist all incoming inquiries and project interactions.\n\n" +
+  "• Structured Schema Design:\n" +
+  "Store visitor names, email addresses, categorized subjects, full messages, and timestamps safely.\n\n" +
+  "• Admin Review Dashboard:\n" +
+  "Create an authenticated admin dashboard route where I can view, search, and manage submitted messages.",
+  { x: 5.04, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 18 }
+);
+
+// Feature 3: Custom Domain & Hosting
+s9.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 8.88, y: 1.55, w: 3.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
+s9.addText("🌐 3. Custom Domain & Hosting", { x: 9.08, y: 1.75, w: 3.25, h: 0.35, fontSize: 13, bold: true, color: COLORS.purpleAccent });
+s9.addText(
+  "• Production Cloud Deployment:\n" +
+  "Publish the portfolio to high-performance cloud hosting platforms such as Vercel or Netlify.\n\n" +
+  "• Personalized Domain Name:\n" +
+  "Connect the site to a personalized professional domain (e.g. sultanaasma.dev) with automatic SSL encryption.\n\n" +
+  "• Automated CI/CD Pipelines:\n" +
+  "Configure GitHub Actions to automatically build, test, and deploy code updates upon every git push to the main branch.",
+  { x: 9.08, y: 2.2, w: 3.25, h: 3.8, fontSize: 10.5, color: COLORS.textMuted, lineSpacing: 18 }
 );
 
 // ==========================================
 // SLIDE 10: Conclusion & Q&A
 // ==========================================
-const s10 = createBaseSlide("09 // Conclusion & Q&A", "Conclusion & What I Learned", "10");
+const s10 = createBaseSlide("09 // Conclusion & Q&A", "Conclusion & Key Project Learnings", "10");
 
 // Left Box: Learnings
 s10.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 0.8, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.cardBorder } });
 s10.addText("💡 What I Learned from This Project", { x: 1.05, y: 1.75, w: 5.15, h: 0.35, fontSize: 13, bold: true, color: COLORS.textLight });
 s10.addText(
-  "• How to write clean, semantic HTML and structure web pages properly.\n\n" +
-  "• How to design responsive layouts using CSS Grid, Flexbox, and fluid clamp() typography.\n\n" +
-  "• How to build real-time Canvas animations running at 60 FPS.\n\n" +
-  "• How to debug real-world web problems like transparency bugs and mobile screen overflow.",
+  "• Semantic Architecture: Practical structuring of accessible web documents using Semantic HTML5.\n\n" +
+  "• Modern CSS Mastery: Designing responsive layouts with custom CSS variables, Grid, Flexbox, and fluid clamp() typography.\n\n" +
+  "• Procedural Canvas Animation: Building dynamic real-time graphics and collision physics using the HTML5 Canvas 2D context.\n\n" +
+  "• Engineering Problem Solving: Debugging modal transparency bleed-through, securing forms with silent honeypots, and ensuring multi-device responsiveness.",
   { x: 1.05, y: 2.2, w: 5.15, h: 3.8, fontSize: 11, color: COLORS.textMuted, lineSpacing: 21 }
 );
 
-// Right Box: Thank You
+// Right Box: Thank You & Q&A
 s10.addShape(pptx.shapes.ROUNDED_RECTANGLE, { x: 6.88, y: 1.55, w: 5.65, h: 4.8, fill: { color: COLORS.cardBg }, line: { color: COLORS.blueAccent } });
 s10.addText("🤝 THANK YOU!", { x: 7.13, y: 2.3, w: 5.15, h: 0.6, fontSize: 24, bold: true, color: COLORS.textLight, align: "center" });
 s10.addText(
-  "\"Thank you Sir and everyone for your time.\n\nI am now ready to answer any questions you may have.\"",
+  "\"Thank you, honorable faculty and everyone, for your time and guidance.\n\nI am now ready to answer any questions regarding my project.\"",
   { x: 7.13, y: 3.1, w: 5.15, h: 1.5, fontSize: 12.5, color: COLORS.textMuted, align: "center", lineSpacing: 20 }
 );
 
-s10.addText("Q&A Session • Open for Questions", {
+s10.addText("Q&A Session • Open for Faculty Evaluation", {
   x: 7.13,
   y: 4.8,
   w: 5.15,
@@ -910,7 +972,7 @@ const legacyDesktop = "C:\\Users\\USER\\Desktop\\My_Portfolio_Presentation_Sulta
 pptx.writeFile({ fileName: baseTempWorkspace }).then(() => {
   console.log(`Generated presentation successfully.`);
 
-  // 1. Always copy to Updated Desktop file (never locked)
+  // 1. Always copy to Updated Desktop file
   try {
     fs.copyFileSync(baseTempWorkspace, updatedDesktop);
     console.log(`Saved updated copy on Desktop: ${updatedDesktop}`);
