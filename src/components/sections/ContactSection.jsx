@@ -22,6 +22,8 @@ export default function ContactSection({ preselectedSubject }) {
     name: "",
     email: "",
     subject: contact.inquiryTypes[0],
+    contactMethod: "email", // "email" | "phone"
+    consent: false,
     message: "",
     website: "", // Invisible honeypot field
   });
@@ -58,6 +60,9 @@ export default function ContactSection({ preselectedSubject }) {
     }
     if (!formData.message.trim() || formData.message.trim().length < 10) {
       newErrors.message = "Please enter a message of at least 10 characters.";
+    }
+    if (!formData.consent) {
+      newErrors.consent = "Please check the box to confirm your consent.";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -96,6 +101,8 @@ export default function ContactSection({ preselectedSubject }) {
         name: "",
         email: "",
         subject: contact.inquiryTypes[0],
+        contactMethod: "email",
+        consent: false,
         message: "",
         website: "",
       });
@@ -357,6 +364,37 @@ export default function ContactSection({ preselectedSubject }) {
                   </select>
                 </div>
 
+                {/* Preferred Contact Method (Radio Group) */}
+                <div>
+                  <label className="block font-mono text-xs font-medium uppercase tracking-wider text-ink-secondary mb-2">
+                    Preferred Response Channel
+                  </label>
+                  <div className="flex flex-wrap items-center gap-6 text-sm text-ink-primary">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        value="email"
+                        checked={formData.contactMethod === "email"}
+                        onChange={handleChange}
+                        className="h-4 w-4 text-accent-primary focus:ring-accent-primary"
+                      />
+                      <span>Email Response</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        value="phone"
+                        checked={formData.contactMethod === "phone"}
+                        onChange={handleChange}
+                        className="h-4 w-4 text-accent-primary focus:ring-accent-primary"
+                      />
+                      <span>Phone / WhatsApp</span>
+                    </label>
+                  </div>
+                </div>
+
                 {/* Message Textarea */}
                 <div>
                   <label
@@ -368,7 +406,7 @@ export default function ContactSection({ preselectedSubject }) {
                   <textarea
                     id="contact-message"
                     name="message"
-                    rows={5}
+                    rows={4}
                     required
                     value={formData.message}
                     onChange={handleChange}
@@ -386,6 +424,39 @@ export default function ContactSection({ preselectedSubject }) {
                     >
                       <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />
                       <span>{errors.message}</span>
+                    </p>
+                  )}
+                </div>
+
+                {/* Consent Checkbox */}
+                <div>
+                  <div className="flex items-start gap-2.5">
+                    <input
+                      id="contact-consent"
+                      name="consent"
+                      type="checkbox"
+                      checked={formData.consent}
+                      onChange={(e) => {
+                        const checked = e.target.checked;
+                        setFormData((prev) => ({ ...prev, consent: checked }));
+                        if (errors.consent && checked) {
+                          setErrors((prev) => ({ ...prev, consent: undefined }));
+                        }
+                      }}
+                      aria-invalid={Boolean(errors.consent)}
+                      className="mt-1 h-4 w-4 rounded border-hairline bg-surface text-accent-primary focus:ring-accent-primary"
+                    />
+                    <label
+                      htmlFor="contact-consent"
+                      className="text-xs text-ink-secondary leading-normal cursor-pointer"
+                    >
+                      I confirm that the details provided are accurate and grant permission to contact me regarding this inquiry. <span className="text-accent-primary">*</span>
+                    </label>
+                  </div>
+                  {errors.consent && (
+                    <p className="mt-1.5 flex items-center gap-1.5 text-xs text-red-400">
+                      <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span>{errors.consent}</span>
                     </p>
                   )}
                 </div>

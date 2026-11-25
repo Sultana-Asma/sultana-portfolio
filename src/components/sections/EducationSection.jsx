@@ -199,6 +199,60 @@ export default function EducationSection() {
             })}
           </div>
         )}
+
+        {/* 3. Academic Summary & Qualifications Matrix Table */}
+        <div className="mt-8 overflow-hidden rounded-xl border border-hairline bg-surface p-6 sm:p-8">
+          <div className="mb-4 flex items-center gap-2.5">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-accent-primary/30 bg-accent-primary/10 text-accent-primary">
+              <GraduationCap className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <div>
+              <h4 className="font-display text-lg font-bold text-ink-primary">
+                Academic Qualifications & Coursework Matrix
+              </h4>
+              <p className="font-mono text-xs text-ink-muted">
+                Structured overview of formal academic milestones
+              </p>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[580px] text-left text-sm text-ink-secondary">
+              <thead className="border-b border-hairline bg-surface/80 font-mono text-xs uppercase tracking-wider text-ink-primary">
+                <tr>
+                  <th scope="col" className="px-4 py-3">Exam / Degree</th>
+                  <th scope="col" className="px-4 py-3">Institution</th>
+                  <th scope="col" className="px-4 py-3">Board / Dept</th>
+                  <th scope="col" className="px-4 py-3">Passing Year</th>
+                  <th scope="col" className="px-4 py-3">Result / GPA</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-hairline">
+                <tr className="transition-colors hover:bg-surface/50">
+                  <td className="px-4 py-3.5 font-medium text-ink-primary">B.Sc. in CSE</td>
+                  <td className="px-4 py-3.5">Daffodil International University</td>
+                  <td className="px-4 py-3.5">Dept. of CSE, FSIT</td>
+                  <td className="px-4 py-3.5 font-mono text-xs">2026 (Expected)</td>
+                  <td className="px-4 py-3.5 font-mono text-xs font-semibold text-cyan-400">Enrolled (Final Sem)</td>
+                </tr>
+                <tr className="transition-colors hover:bg-surface/50">
+                  <td className="px-4 py-3.5 font-medium text-ink-primary">HSC (Science)</td>
+                  <td className="px-4 py-3.5">Govt. Yasin College, Faridpur</td>
+                  <td className="px-4 py-3.5">Dhaka Board</td>
+                  <td className="px-4 py-3.5 font-mono text-xs">2022</td>
+                  <td className="px-4 py-3.5 font-mono text-xs font-semibold text-emerald-400">GPA 5.00</td>
+                </tr>
+                <tr className="transition-colors hover:bg-surface/50">
+                  <td className="px-4 py-3.5 font-medium text-ink-primary">SSC (Science)</td>
+                  <td className="px-4 py-3.5">Sarada Sundari Girls' High School</td>
+                  <td className="px-4 py-3.5">Dhaka Board</td>
+                  <td className="px-4 py-3.5 font-mono text-xs">2020</td>
+                  <td className="px-4 py-3.5 font-mono text-xs font-semibold text-cyan-400">GPA 4.94</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
   );

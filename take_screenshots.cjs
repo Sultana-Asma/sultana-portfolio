@@ -24,18 +24,34 @@ const server = http.createServer((req, res) => {
       let html = fs.readFileSync(filePath, 'utf8');
 
       if (query && query.includes('view=skills-only')) {
-        // Isolate Skills section so it renders at top of viewport in 16:9
         const css = `
           <style>
-            header, #about, #projects, #education, #services, #contact, footer {
-              display: none !important;
-            }
-            #skills {
-              padding-top: 1.5rem !important;
-              padding-bottom: 2rem !important;
-              min-height: 100vh !important;
-              background: #090d18 !important;
-            }
+            header, #about, #projects, #education, #services, #contact, footer { display: none !important; }
+            #skills { padding-top: 1.5rem !important; padding-bottom: 2rem !important; min-height: 100vh !important; background: #090d18 !important; }
+          </style>
+        `;
+        html = html.replace('</head>', `${css}</head>`);
+      } else if (query && query.includes('view=education')) {
+        const css = `
+          <style>
+            header, #about, #skills, #projects, #services, #contact, footer { display: none !important; }
+            #education { padding-top: 1.5rem !important; padding-bottom: 2rem !important; min-height: 100vh !important; background: #090d18 !important; }
+          </style>
+        `;
+        html = html.replace('</head>', `${css}</head>`);
+      } else if (query && query.includes('view=contact')) {
+        const css = `
+          <style>
+            header, #about, #skills, #projects, #education, #services, footer { display: none !important; }
+            #contact { padding-top: 1.5rem !important; padding-bottom: 2rem !important; min-height: 100vh !important; background: #090d18 !important; }
+          </style>
+        `;
+        html = html.replace('</head>', `${css}</head>`);
+      } else if (query && query.includes('view=projects')) {
+        const css = `
+          <style>
+            header, #about, #skills, #education, #services, #contact, footer { display: none !important; }
+            #projects { padding-top: 1.5rem !important; padding-bottom: 2rem !important; min-height: 100vh !important; background: #090d18 !important; }
           </style>
         `;
         html = html.replace('</head>', `${css}</head>`);
@@ -83,6 +99,9 @@ server.listen(PORT, '127.0.0.1', () => {
 
   const shotHero = path.join(screenshotsDir, 'website-desktop-hero.png');
   const shotSkills = path.join(screenshotsDir, 'website-skills-section.png');
+  const shotProjects = path.join(screenshotsDir, 'website-projects-section.png');
+  const shotEducation = path.join(screenshotsDir, 'website-education-table.png');
+  const shotContact = path.join(screenshotsDir, 'website-contact-form.png');
   const shotModal = path.join(screenshotsDir, 'website-simulation-modal.png');
 
   function runShot(args, cb) {
@@ -100,23 +119,50 @@ server.listen(PORT, '127.0.0.1', () => {
   ], () => {
     console.log('1. Hero shot captured');
 
-    // 2. Skills Section Output (Isolated in 16:9 1280x720)
+    // 2. Skills Section Output
     runShot([
       '--headless=new', '--disable-gpu', '--hide-scrollbars',
       '--virtual-time-budget=4000', '--window-size=1280,720',
       `--screenshot=${shotSkills}`, `http://127.0.0.1:${PORT}/?view=skills-only`
     ], () => {
-      console.log('2. Skills shot captured in 16:9');
+      console.log('2. Skills shot captured');
 
-      // 3. Simulation Modal Output (1280x720 16:9)
+      // 3. Projects Section Output
       runShot([
         '--headless=new', '--disable-gpu', '--hide-scrollbars',
-        '--virtual-time-budget=5000', '--window-size=1280,720',
-        `--screenshot=${shotModal}`, `http://127.0.0.1:${PORT}/?view=modal`
+        '--virtual-time-budget=4000', '--window-size=1280,720',
+        `--screenshot=${shotProjects}`, `http://127.0.0.1:${PORT}/?view=projects`
       ], () => {
-        console.log('3. Simulation Modal shot captured in 16:9');
-        server.close(() => {
-          console.log('All 3 screenshots successfully captured with uniform 16:9 aspect ratio!');
+        console.log('3. Projects shot captured');
+
+        // 4. Education Table Output
+        runShot([
+          '--headless=new', '--disable-gpu', '--hide-scrollbars',
+          '--virtual-time-budget=4000', '--window-size=1280,720',
+          `--screenshot=${shotEducation}`, `http://127.0.0.1:${PORT}/?view=education`
+        ], () => {
+          console.log('4. Education table shot captured');
+
+          // 5. Contact Form Output
+          runShot([
+            '--headless=new', '--disable-gpu', '--hide-scrollbars',
+            '--virtual-time-budget=4000', '--window-size=1280,720',
+            `--screenshot=${shotContact}`, `http://127.0.0.1:${PORT}/?view=contact`
+          ], () => {
+            console.log('5. Contact form shot captured');
+
+            // 6. Simulation Modal Output
+            runShot([
+              '--headless=new', '--disable-gpu', '--hide-scrollbars',
+              '--virtual-time-budget=5000', '--window-size=1280,720',
+              `--screenshot=${shotModal}`, `http://127.0.0.1:${PORT}/?view=modal`
+            ], () => {
+              console.log('6. Simulation Modal shot captured');
+              server.close(() => {
+                console.log('All 6 screenshots successfully captured in uniform 16:9 widescreen!');
+              });
+            });
+          });
         });
       });
     });
